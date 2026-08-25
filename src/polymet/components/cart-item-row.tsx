@@ -1,25 +1,31 @@
 import { MinusIcon, PlusIcon, Trash2Icon } from "lucide-react";
-import { CartLine, formatPrice } from "@/polymet/data/cart-context";
+import { CartLine, formatPrice, getUnitPrice } from "@/polymet/data/cart-context";
 
 interface CartItemRowProps {
   line: CartLine;
-  onUpdateQuantity: (productId: string, quantity: number) => void;
-  onRemove: (productId: string) => void;
+  onUpdateQuantity: (lineId: string, quantity: number) => void;
+  onRemove: (lineId: string) => void;
 }
+
+const VERSION_LABEL: Record<string, string> = {
+  hincha: "Hincha",
+  jugador: "Jugador",
+};
 
 export default function CartItemRow({
   line,
   onUpdateQuantity,
   onRemove,
 }: CartItemRowProps) {
-  const { product, quantity } = line;
+  const { jersey, size, versionId, quantity, lineId } = line;
+  const unitPrice = getUnitPrice(jersey, versionId);
 
   return (
     <div className="flex gap-3">
       <div className="h-20 w-20 shrink-0 overflow-hidden rounded-md bg-secondary">
         <img
-          src={product.images[0]}
-          alt={product.name}
+          src={jersey.images.front}
+          alt={jersey.nation}
           className="h-full w-full object-cover"
         />
       </div>
@@ -27,17 +33,18 @@ export default function CartItemRow({
       <div className="flex flex-1 flex-col justify-between">
         <div className="flex items-start justify-between gap-2">
           <div>
-            <h4 className="text-sm font-medium leading-snug text-foreground">
-              {product.name}
+            <h4 className="text-sm font-semibold leading-snug text-foreground">
+              {jersey.nation}
             </h4>
             <p className="mt-0.5 text-xs text-muted-foreground">
-              {formatPrice(product.price)} c/u
+              Talle {size} · {VERSION_LABEL[versionId]} ·{" "}
+              {formatPrice(unitPrice)} c/u
             </p>
           </div>
           <button
             type="button"
-            onClick={() => onRemove(product.id)}
-            aria-label={`Eliminar ${product.name}`}
+            onClick={() => onRemove(lineId)}
+            aria-label={`Eliminar ${jersey.nation}`}
             className="text-muted-foreground transition-colors hover:text-destructive"
           >
             <Trash2Icon className="h-4 w-4" />
@@ -48,7 +55,7 @@ export default function CartItemRow({
           <div className="flex items-center rounded-md border border-border">
             <button
               type="button"
-              onClick={() => onUpdateQuantity(product.id, quantity - 1)}
+              onClick={() => onUpdateQuantity(lineId, quantity - 1)}
               className="flex h-7 w-7 items-center justify-center text-foreground transition-colors hover:bg-secondary"
               aria-label="Restar cantidad"
             >
@@ -59,15 +66,15 @@ export default function CartItemRow({
             </span>
             <button
               type="button"
-              onClick={() => onUpdateQuantity(product.id, quantity + 1)}
+              onClick={() => onUpdateQuantity(lineId, quantity + 1)}
               className="flex h-7 w-7 items-center justify-center text-foreground transition-colors hover:bg-secondary"
               aria-label="Sumar cantidad"
             >
               <PlusIcon className="h-3 w-3" />
             </button>
           </div>
-          <span className="text-sm font-semibold text-foreground">
-            {formatPrice(product.price * quantity)}
+          <span className="text-sm font-bold text-foreground">
+            {formatPrice(unitPrice * quantity)}
           </span>
         </div>
       </div>

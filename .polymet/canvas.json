@@ -7,7 +7,7 @@
       "source": "/src/polymet/components/product-card.tsx",
       "entrypoint": "/src/polymet/components/product-card.render.tsx",
       "description": "Product card with hover zoom image, stock tag, price, and quick add-to-cart button",
-      "buildId": "198bb62bd1fc8fe1070a4283c2825b09:47514ad50d7761cb8fae5d349d9f08b83a8b40aa2b711cb2b8f5db24317d49d7583a41fe",
+      "buildId": "f96ab57e0fd398989903bbc39f9737e7:0593b2306637aab125735cde8a7823d6c8df04c8730a9263fc6c8a3fcbbe8a6b19b002b1",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 3000,
@@ -24,15 +24,15 @@
       "source": "/src/polymet/components/product-grid.tsx",
       "entrypoint": "/src/polymet/components/product-grid.render.tsx",
       "description": "Filterable product grid, 3-4 cols desktop / 1-2 mobile",
-      "buildId": "d98c3f2da887ec270e1ee2bb5316295d:62c88fcca284ea84a55824fb92ee9ab6024b9bab4cfa36902eb5987ab254f3ad005586c8",
+      "buildId": "06d395c7e4e19086102684fd93a3f732:0a8c7814e52de1128718fd38035f1b78f9e7451516c18b3f539dda0a95c6837b0986a816",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 4224,
         "y": 4000
       },
       "size": {
-        "width": 1009,
-        "height": 1603
+        "width": 994,
+        "height": 2870
       }
     },
     {
@@ -41,15 +41,15 @@
       "source": "/src/polymet/components/hero-banner.tsx",
       "entrypoint": "/src/polymet/components/hero-banner.render.tsx",
       "description": "Hero banner introducing the boutique store",
-      "buildId": "45fb9a1639bdcb7074adc84a5ac52705:359f500db0a7f752d1b4af263ffa8b05ca1a81d48a2ff01560b02e103534797c71ac7185",
+      "buildId": "3ab77765ab3dad594426c05d7925b92a:4f3007949ecbc966680d6b818ab383cf850cc4d9b04cd1408bb8a3173d8c0291517cf57b",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 5448,
         "y": 4000
       },
       "size": {
-        "width": 1024,
-        "height": 768
+        "width": 1010,
+        "height": 774
       }
     },
     {
@@ -58,7 +58,7 @@
       "source": "/src/polymet/components/product-detail-modal.tsx",
       "entrypoint": "/src/polymet/components/product-detail-modal.render.tsx",
       "description": "Product detail modal with image gallery/slider, description, quantity selector, and buy CTAs",
-      "buildId": "8f32d0f2d20e97b32433bb5e58f64db3:bc4455a8f9735e08fc14e1f56b583e7ac55bab133324322c1fa85ffcb0e85827c887e27f",
+      "buildId": "d4f378ee0a999211c09c8141276e483f:9b497561c506a3f866618f3711e4885f84f77fedc4b2b1c0068303bbf606485184a7b7c8",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 6672,
@@ -75,7 +75,7 @@
       "source": "/src/polymet/components/cart-item-row.tsx",
       "entrypoint": "/src/polymet/components/cart-item-row.render.tsx",
       "description": "Single line item row for the cart drawer with quantity controls and delete",
-      "buildId": "71045d97148f0092d13b8d327df755b9:e876161507280f98db7afc3b40b056ebcb5c12d0ce328b42643b62ff5b690e59f5446f8b",
+      "buildId": "8bb23165985c57a54ba04f8bafb12c95:a604088cecb42bcddf88739a2b9355400cc327af0fc4eff41c515778fbc2166b363b04be",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 7896,
@@ -92,14 +92,14 @@
       "source": "/src/polymet/components/cart-drawer.tsx",
       "entrypoint": "/src/polymet/components/cart-drawer.render.tsx",
       "description": "Slide-over shopping cart drawer with line items, subtotal, and Mercado Pago checkout CTA",
-      "buildId": "3d9a8a234bb7f21015644c8456bf9513:af31bb7628d4dfa6d528ec95b8593cb9ff4da4b03f240be334dabe2e7929026e4f9f2eb9",
+      "buildId": "77fe439fc36de87246767eff3ebd3852:4036247265cc79852360f17b931ff136fd6fd27f841a69bb277241f72927905b0d8b0902",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 8864,
         "y": 4000
       },
       "size": {
-        "width": 1024,
+        "width": 1088,
         "height": 768
       }
     },
@@ -109,7 +109,7 @@
       "source": "/src/polymet/components/site-header.tsx",
       "entrypoint": "/src/polymet/components/site-header.render.tsx",
       "description": "Sticky site header with brand logo, category filters, and cart icon with live badge",
-      "buildId": "23c4769cc411c37879d65f20ce480e70:d5136878ed0afb294cde60209e5dbdc000a29fd7bc5166c9c6a15d68cd96773699000f3b",
+      "buildId": "27924560acc9a43c9fc14577401f1575:07fbcce9b152a9b3d04ec4daef29672c5849808184a6ae9c8ab23d82865b1e091921ac84",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 10088,
@@ -126,7 +126,7 @@
       "source": "/src/polymet/components/mobile-bottom-nav.tsx",
       "entrypoint": "/src/polymet/components/mobile-bottom-nav.render.tsx",
       "description": "Sticky bottom navigation for mobile with home, catalog, and cart",
-      "buildId": "4387df26421ee26346ac95d9b1b7b164:e6ce6e1aa431f4d5fd2b1fe05f49b6d2d3f9006c8be1c0b4763ca0b5d7772c26f4e8cab6",
+      "buildId": "84f4b12f1167c8a3b7a61a686bb7b1d4:0d1fa95df895d35f34b71ae3e716f6402d0db3da4ef43a883e4e2d5e990e4dc0afec9ec2",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 3000,
@@ -143,7 +143,7 @@
       "source": "/src/polymet/layouts/storefront-layout.tsx",
       "entrypoint": "/src/polymet/layouts/storefront-layout.render.tsx",
       "description": "Storefront layout composing header, mobile bottom nav, cart drawer, and footer around page content",
-      "buildId": "1aaa41e115e517ea9ccd455c1269ba2c:28a864f482abb5dedffe0a7f2f386e79759d76685f182ed1a9dd22616af79df3772bd634",
+      "buildId": "2fad0f85a56e2efd6bce2c5de58560ca:6b71da5a520e2e813b18f74c6704266c0ed5efe2b8523b2265b37b370c53ac8c42e960b1",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 3968,
@@ -160,15 +160,15 @@
       "source": "/src/polymet/pages/home.tsx",
       "entrypoint": "/src/polymet/pages/home.render.tsx",
       "description": "Home/catalog storefront page with hero banner and filterable product grid",
-      "buildId": "c60a40d0a5747d0cb80674088ca140b7:3154d50b67c7b3dff9da014e93389031d5462d2f56d56d5528b2a2c61b0f837a031b9cc4",
+      "buildId": "3a3ddf743e65ab6d03e86e9ca145795f:1a72b7c18a2ee852a4779b05614a7f3be53f4b3bcf7942ce6a5c22580840dbc5ef1372e8",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 0,
         "y": 0
       },
       "size": {
-        "width": 1024,
-        "height": 768
+        "width": 994,
+        "height": 3072
       }
     },
     {
@@ -177,15 +177,15 @@
       "source": "/src/polymet/pages/checkout-success.tsx",
       "entrypoint": "/src/polymet/pages/checkout-success.render.tsx",
       "description": "Order success confirmation page with order summary and return-to-store CTA",
-      "buildId": "883869d91555a5811f2bd6a18601f3da:4c8812b4b717f4e25be699b714368962b80bcff7f7891fc0a5ecf8bf33fa33b51194f604",
+      "buildId": "29e3a4003528687221005f7702e5e8e5:ab3cfc7bb11696cc823ef2366bfcf28e9b2e441389aaebc5b62b5f6dd7e3d90956737b30",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 0,
         "y": 0
       },
       "size": {
-        "width": 1024,
-        "height": 768
+        "width": 1010,
+        "height": 914
       }
     },
     {
@@ -194,7 +194,7 @@
       "source": "/src/polymet/pages/checkout-failure.tsx",
       "entrypoint": "/src/polymet/pages/checkout-failure.render.tsx",
       "description": "Payment failure page with friendly error message and retry option",
-      "buildId": "efc331827653afbe48586fea0a101cea:5a104942db09dea30e8e2e7e37726889e56d63458d24f617725b76a3e65f819b0d4f25e0",
+      "buildId": "4b1f4b7ab2e875fdb7ea7d1c29d10f6b:7f58ded10398d51f9f57ea87e933e2e62e8572429f9b0430466ab28c2e9c1e2f12267a19",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 0,
@@ -212,11 +212,79 @@
       "entrypoint": "/src/polymet/prototypes/boutique-store.render.tsx",
       "description": "Boutique storefront prototype wiring home, checkout success/failure routes with cart state and layout",
       "slug": "dev-boutique-sho-kby3uycq",
-      "buildId": "b03275cbc10736cfd78ec68b9340925e:9bea782448a623f658e253100596690f7ffdaaf4ef9a7fdaacacf83a59f2b952ba21e76f",
+      "buildId": "f93e36ebd0ac5dc77ef6e1048ba4de5a:40c01733ba5da2b1c27d0f96fe35d19b0972855f52048737dd21b77261e0d5d8a8cb595a",
       "buildStatus": "SUCCESS",
       "position": {
         "x": 0,
         "y": 0
+      },
+      "size": {
+        "width": 994,
+        "height": 3072
+      }
+    },
+    {
+      "id": "cn_gsxdahz2",
+      "type": "file",
+      "source": "/src/polymet/components/jersey-card.tsx",
+      "entrypoint": "/src/polymet/components/jersey-card.render.tsx",
+      "description": "Jersey product card with hover image swap (front to back), nation, edition, stock/edition badges, price, and quick add",
+      "buildId": "26754f73c23c2a74af14f3c8f18ef10c:59c7c81e8f06d608d9387e42368b6fe61ad4f4d53632af1f9b8136fa8072537665ce915a",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 5192,
+        "y": 6003
+      },
+      "size": {
+        "width": 1024,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_mielbyce",
+      "type": "file",
+      "source": "/src/polymet/components/jersey-filter-bar.tsx",
+      "entrypoint": "/src/polymet/components/jersey-filter-bar.render.tsx",
+      "description": "Filter and sort bar for confederation, edition, and size",
+      "buildId": "a21dabcd52be67869924ae9b67f4e490:d9495d98e32c7fd0a199e9735ecfa179224b2b4a439f81866cef83237b04f02256410d83",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 6416,
+        "y": 6003
+      },
+      "size": {
+        "width": 1024,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_9eqw5ed8",
+      "type": "file",
+      "source": "/src/polymet/components/jersey-grid.tsx",
+      "entrypoint": "/src/polymet/components/jersey-grid.render.tsx",
+      "description": "Jersey product grid with filter bar, 3-4 cols desktop / 1-2 mobile",
+      "buildId": "921cbe27eb42e1ac5d5bcf6bdc1485bc:c88aed0022c99205b505bec333f1ed72637037eece1f93fa36ba706376a82bfb4d4957ee",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 7640,
+        "y": 6003
+      },
+      "size": {
+        "width": 1009,
+        "height": 1697
+      }
+    },
+    {
+      "id": "cn_33wufmau",
+      "type": "file",
+      "source": "/src/polymet/components/jersey-detail-modal.tsx",
+      "entrypoint": "/src/polymet/components/jersey-detail-modal.render.tsx",
+      "description": "Jersey detail modal with gallery, size selector pills, version selector, and sticky CTAs",
+      "buildId": "00c2588ac9c97537c3781c293a454dd5:ea87845094f861989b50b11d2bab34512f30e87e69414aac2845a837d41c476a2e11be53",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 8849,
+        "y": 6003
       },
       "size": {
         "width": 1024,

@@ -6,11 +6,21 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { Product } from "@/polymet/data/products-data";
+import { Jersey, SizeCode, VersionId } from "@/polymet/data/jerseys-data";
 
 export interface CartLine {
-  product: Product;
+  lineId: string;
+  jersey: Jersey;
+  size: SizeCode;
+  versionId: VersionId;
   quantity: number;
+}
+
+interface AddItemInput {
+  jersey: Jersey;
+  size: SizeCode;
+  versionId: VersionId;
+  quantity?: number;
 }
 
 interface CartContextValue {
@@ -20,13 +30,22 @@ interface CartContextValue {
   subtotal: number;
   openCart: () => void;
   closeCart: () => void;
-  addItem: (product: Product, quantity?: number) => void;
-  removeItem: (productId: string) => void;
-  updateQuantity: (productId: string, quantity: number) => void;
+  addItem: (input: AddItemInput) => void;
+  removeItem: (lineId: string) => void;
+  updateQuantity: (lineId: string, quantity: number) => void;
   clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextValue | undefined>(undefined);
+
+function lineKey(jerseyId: string, size: SizeCode, versionId: VersionId) {
+  return `${jerseyId}__${size}__${versionId}`;
+}
+
+function unitPrice(jersey: Jersey, versionId: VersionId) {
+  const version = jersey.versions.find((v) => v.id === versionId);
+  return jersey.price + (version?.priceDelta ?? 0);
+}
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [lines, setLines] = useState<CartLine[]>([]);
@@ -35,32 +54,36 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const openCart = useCallback(() => setIsOpen(true), []);
   const closeCart = useCallback(() => setIsOpen(false), []);
 
-  const addItem = useCallback((product: Product, quantity: number = 1) => {
-    setLines((prev) => {
-      const existing = prev.find((line) => line.product.id === product.id);
-      if (existing) {
-        return prev.map((line) =>
-          line.product.id === product.id
-            ? { ...line, quantity: line.quantity + quantity }
-            : line
-        );
-      }
-      return [...prev, { product, quantity }];
-    });
-    setIsOpen(true);
+  const addItem = useCallback(
+    ({ jersey, size, versionId, quantity = 1 }: AddItemInput) => {
+      const id = lineKey(jersey.id, size, versionId);
+      setLines((prev) => {
+        const existing = prev.find((line) => line.lineId === id);
+        if (existing) {
+          return prev.map((line) =>
+            line.lineId === id
+              ? { ...line, quantity: line.quantity + quantity }
+              : line
+          );
+        }
+        return [...prev, { lineId: id, jersey, size, versionId, quantity }];
+      });
+      setIsOpen(true);
+    },
+    []
+  );
+
+  const removeItem = useCallback((lineId: string) => {
+    setLines((prev) => prev.filter((line) => line.lineId !== lineId));
   }, []);
 
-  const removeItem = useCallback((productId: string) => {
-    setLines((prev) => prev.filter((line) => line.product.id !== productId));
-  }, []);
-
-  const updateQuantity = useCallback((productId: string, quantity: number) => {
+  const updateQuantity = useCallback((lineId: string, quantity: number) => {
     setLines((prev) => {
       if (quantity <= 0) {
-        return prev.filter((line) => line.product.id !== productId);
+        return prev.filter((line) => line.lineId !== lineId);
       }
       return prev.map((line) =>
-        line.product.id === productId ? { ...line, quantity } : line
+        line.lineId === lineId ? { ...line, quantity } : line
       );
     });
   }, []);
@@ -73,7 +96,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
   );
 
   const subtotal = useMemo(
-    () => lines.reduce((sum, line) => sum + line.product.price * line.quantity, 0),
+    () =>
+      lines.reduce(
+        (sum, line) =>
+          sum + unitPrice(line.jersey, line.versionId) * line.quantity,
+        0
+      ),
     [lines]
   );
 
@@ -90,7 +118,18 @@ export function CartProvider({ children }: { children: ReactNode }) {
       updateQuantity,
       clearCart,
     }),
-    [lines, isOpen, itemCount, subtotal, openCart, closeCart, addItem, removeItem, updateQuantity, clearCart]
+    [
+      lines,
+      isOpen,
+      itemCount,
+      subtotal,
+      openCart,
+      closeCart,
+      addItem,
+      removeItem,
+      updateQuantity,
+      clearCart,
+    ]
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
@@ -102,6 +141,10 @@ export function useCart() {
     throw new Error("useCart must be used within a CartProvider");
   }
   return ctx;
+}
+
+export function getUnitPrice(jersey: Jersey, versionId: VersionId) {
+  return unitPrice(jersey, versionId);
 }
 
 export function formatPrice(value: number): string {

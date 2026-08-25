@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ShoppingBagIcon, ShieldCheckIcon } from "lucide-react";
+import { ShoppingBagIcon, ShieldCheckIcon, CreditCardIcon, WalletIcon, LayersIcon } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -16,8 +16,8 @@ interface CartDrawerProps {
   onOpenChange: (open: boolean) => void;
   lines: CartLine[];
   subtotal: number;
-  onUpdateQuantity: (productId: string, quantity: number) => void;
-  onRemove: (productId: string) => void;
+  onUpdateQuantity: (lineId: string, quantity: number) => void;
+  onRemove: (lineId: string) => void;
   onCheckout: () => void;
 }
 
@@ -57,18 +57,18 @@ export default function CartDrawer({
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary">
               <ShoppingBagIcon className="h-6 w-6 text-muted-foreground" />
             </div>
-            <p className="font-medium text-foreground">
-              Tu carrito está vacío
+            <p className="font-semibold text-foreground">
+              Aún no tienes ninguna camiseta en tu carrito
             </p>
             <p className="text-sm text-muted-foreground">
-              Agregá alguna pieza de la colección para verla acá.
+              Elegí la camiseta de tu selección favorita y sumala al carrito.
             </p>
             <Button
               variant="outline"
-              className="mt-2 bg-card"
+              className="mt-2 bg-secondary"
               onClick={() => onOpenChange(false)}
             >
-              Seguir explorando
+              Explorar Camisetas
             </Button>
           </div>
         ) : (
@@ -77,7 +77,7 @@ export default function CartDrawer({
               <div className="flex flex-col gap-5">
                 {lines.map((line) => (
                   <CartItemRow
-                    key={line.product.id}
+                    key={line.lineId}
                     line={line}
                     onUpdateQuantity={onUpdateQuantity}
                     onRemove={onRemove}
@@ -89,7 +89,7 @@ export default function CartDrawer({
             <div className="border-t border-border bg-card px-6 py-5">
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted-foreground">Subtotal</span>
-                <span className="font-medium text-foreground">
+                <span className="font-semibold text-foreground">
                   {formatPrice(subtotal)}
                 </span>
               </div>
@@ -101,7 +101,7 @@ export default function CartDrawer({
 
               <Button
                 size="lg"
-                className="w-full gap-2"
+                className="w-full gap-2 bg-[hsl(var(--mercadopago))] text-[hsl(var(--mercadopago-foreground))] hover:bg-[hsl(var(--mercadopago))]/90"
                 disabled={isCheckingOut}
                 onClick={handleCheckout}
               >
@@ -112,8 +112,23 @@ export default function CartDrawer({
               </Button>
 
               <div className="mt-3 flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
-                <ShieldCheckIcon className="h-3.5 w-3.5 text-primary" />
+                <ShieldCheckIcon className="h-3.5 w-3.5 text-[hsl(var(--mercadopago))]" />
                 Pago 100% seguro procesado por Mercado Pago
+              </div>
+
+              <div className="mt-3 flex items-center justify-center gap-4 text-[11px] text-muted-foreground">
+                <span className="flex items-center gap-1">
+                  <CreditCardIcon className="h-3.5 w-3.5" />
+                  Tarjetas
+                </span>
+                <span className="flex items-center gap-1">
+                  <WalletIcon className="h-3.5 w-3.5" />
+                  Dinero en cuenta
+                </span>
+                <span className="flex items-center gap-1">
+                  <LayersIcon className="h-3.5 w-3.5" />
+                  Cuotas
+                </span>
               </div>
             </div>
           </>
