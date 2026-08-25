@@ -1,4 +1,227 @@
 {
   "schema_version": "1",
-  "nodes": []
+  "nodes": [
+    {
+      "id": "cn_pii0w99o",
+      "type": "file",
+      "source": "/src/polymet/components/product-card.tsx",
+      "entrypoint": "/src/polymet/components/product-card.render.tsx",
+      "description": "Product card with hover zoom image, stock tag, price, and quick add-to-cart button",
+      "buildId": "198bb62bd1fc8fe1070a4283c2825b09:47514ad50d7761cb8fae5d349d9f08b83a8b40aa2b711cb2b8f5db24317d49d7583a41fe",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 3000,
+        "y": 4000
+      },
+      "size": {
+        "width": 832,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_7axqrqly",
+      "type": "file",
+      "source": "/src/polymet/components/product-grid.tsx",
+      "entrypoint": "/src/polymet/components/product-grid.render.tsx",
+      "description": "Filterable product grid, 3-4 cols desktop / 1-2 mobile",
+      "buildId": "d98c3f2da887ec270e1ee2bb5316295d:62c88fcca284ea84a55824fb92ee9ab6024b9bab4cfa36902eb5987ab254f3ad005586c8",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 4224,
+        "y": 4000
+      },
+      "size": {
+        "width": 1009,
+        "height": 1603
+      }
+    },
+    {
+      "id": "cn_c0hbc45k",
+      "type": "file",
+      "source": "/src/polymet/components/hero-banner.tsx",
+      "entrypoint": "/src/polymet/components/hero-banner.render.tsx",
+      "description": "Hero banner introducing the boutique store",
+      "buildId": "45fb9a1639bdcb7074adc84a5ac52705:359f500db0a7f752d1b4af263ffa8b05ca1a81d48a2ff01560b02e103534797c71ac7185",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 5448,
+        "y": 4000
+      },
+      "size": {
+        "width": 1024,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_eqs7a987",
+      "type": "file",
+      "source": "/src/polymet/components/product-detail-modal.tsx",
+      "entrypoint": "/src/polymet/components/product-detail-modal.render.tsx",
+      "description": "Product detail modal with image gallery/slider, description, quantity selector, and buy CTAs",
+      "buildId": "8f32d0f2d20e97b32433bb5e58f64db3:bc4455a8f9735e08fc14e1f56b583e7ac55bab133324322c1fa85ffcb0e85827c887e27f",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 6672,
+        "y": 4000
+      },
+      "size": {
+        "width": 1024,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_fvlbjabt",
+      "type": "file",
+      "source": "/src/polymet/components/cart-item-row.tsx",
+      "entrypoint": "/src/polymet/components/cart-item-row.render.tsx",
+      "description": "Single line item row for the cart drawer with quantity controls and delete",
+      "buildId": "71045d97148f0092d13b8d327df755b9:e876161507280f98db7afc3b40b056ebcb5c12d0ce328b42643b62ff5b690e59f5446f8b",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 7896,
+        "y": 4000
+      },
+      "size": {
+        "width": 768,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_gkadr5ms",
+      "type": "file",
+      "source": "/src/polymet/components/cart-drawer.tsx",
+      "entrypoint": "/src/polymet/components/cart-drawer.render.tsx",
+      "description": "Slide-over shopping cart drawer with line items, subtotal, and Mercado Pago checkout CTA",
+      "buildId": "3d9a8a234bb7f21015644c8456bf9513:af31bb7628d4dfa6d528ec95b8593cb9ff4da4b03f240be334dabe2e7929026e4f9f2eb9",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 8864,
+        "y": 4000
+      },
+      "size": {
+        "width": 1024,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_hyuq7j69",
+      "type": "file",
+      "source": "/src/polymet/components/site-header.tsx",
+      "entrypoint": "/src/polymet/components/site-header.render.tsx",
+      "description": "Sticky site header with brand logo, category filters, and cart icon with live badge",
+      "buildId": "23c4769cc411c37879d65f20ce480e70:d5136878ed0afb294cde60209e5dbdc000a29fd7bc5166c9c6a15d68cd96773699000f3b",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 10088,
+        "y": 4000
+      },
+      "size": {
+        "width": 1024,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_oew6ay0l",
+      "type": "file",
+      "source": "/src/polymet/components/mobile-bottom-nav.tsx",
+      "entrypoint": "/src/polymet/components/mobile-bottom-nav.render.tsx",
+      "description": "Sticky bottom navigation for mobile with home, catalog, and cart",
+      "buildId": "4387df26421ee26346ac95d9b1b7b164:e6ce6e1aa431f4d5fd2b1fe05f49b6d2d3f9006c8be1c0b4763ca0b5d7772c26f4e8cab6",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 3000,
+        "y": 6003
+      },
+      "size": {
+        "width": 768,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_ig1esgup",
+      "type": "file",
+      "source": "/src/polymet/layouts/storefront-layout.tsx",
+      "entrypoint": "/src/polymet/layouts/storefront-layout.render.tsx",
+      "description": "Storefront layout composing header, mobile bottom nav, cart drawer, and footer around page content",
+      "buildId": "1aaa41e115e517ea9ccd455c1269ba2c:28a864f482abb5dedffe0a7f2f386e79759d76685f182ed1a9dd22616af79df3772bd634",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 3968,
+        "y": 6003
+      },
+      "size": {
+        "width": 1024,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_1cjz95br",
+      "type": "file",
+      "source": "/src/polymet/pages/home.tsx",
+      "entrypoint": "/src/polymet/pages/home.render.tsx",
+      "description": "Home/catalog storefront page with hero banner and filterable product grid",
+      "buildId": "c60a40d0a5747d0cb80674088ca140b7:3154d50b67c7b3dff9da014e93389031d5462d2f56d56d5528b2a2c61b0f837a031b9cc4",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 1024,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_kndatv4o",
+      "type": "file",
+      "source": "/src/polymet/pages/checkout-success.tsx",
+      "entrypoint": "/src/polymet/pages/checkout-success.render.tsx",
+      "description": "Order success confirmation page with order summary and return-to-store CTA",
+      "buildId": "883869d91555a5811f2bd6a18601f3da:4c8812b4b717f4e25be699b714368962b80bcff7f7891fc0a5ecf8bf33fa33b51194f604",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 1024,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_65lk93np",
+      "type": "file",
+      "source": "/src/polymet/pages/checkout-failure.tsx",
+      "entrypoint": "/src/polymet/pages/checkout-failure.render.tsx",
+      "description": "Payment failure page with friendly error message and retry option",
+      "buildId": "efc331827653afbe48586fea0a101cea:5a104942db09dea30e8e2e7e37726889e56d63458d24f617725b76a3e65f819b0d4f25e0",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 1024,
+        "height": 768
+      }
+    },
+    {
+      "id": "cn_hf2sikvv",
+      "type": "file",
+      "source": "/src/polymet/prototypes/boutique-store.tsx",
+      "entrypoint": "/src/polymet/prototypes/boutique-store.render.tsx",
+      "description": "Boutique storefront prototype wiring home, checkout success/failure routes with cart state and layout",
+      "slug": "dev-boutique-sho-kby3uycq",
+      "buildId": "b03275cbc10736cfd78ec68b9340925e:9bea782448a623f658e253100596690f7ffdaaf4ef9a7fdaacacf83a59f2b952ba21e76f",
+      "buildStatus": "SUCCESS",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 1024,
+        "height": 768
+      }
+    }
+  ]
 }
