@@ -53,7 +53,7 @@ Rebuild the existing boutique storefront (active file: src/polymet/prototypes/bo
 - [x] site-header.tsx rewrite
 - [ ] mobile-bottom-nav.tsx restyle (still uses old boutique styling, needs sporty restyle + wiring)
 - [ ] storefront-layout.tsx rewire + force dark theme (still references old cart-context/site-header props; must add `dark` class wrapper, wire new SiteHeader confederation filter state, use CartDrawer/CartLine new shape)
-- [ ] home.tsx rewrite (still uses old ProductGrid/ProductDetailModal/products-data; must switch to JerseyGrid/JerseyDetailModal/jerseys-data + addItem({jersey,size,versionId,quantity}) signature)
+- [x] home.tsx rewrite (now uses JerseyGrid/JerseyDetailModal/jerseys-data + addItem({jersey,size,versionId,quantity}))
 - [ ] checkout-success.tsx rewrite (celebration copy + sizes/tracking notice)
 - [ ] checkout-failure.tsx restyle (dark theme only, keep retry logic)
 - [ ] boutique-store.tsx prototype update (imports already point to home/layout so will inherit once those are rewritten; double check dark wrapper + routes unchanged)

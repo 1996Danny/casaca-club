@@ -1,24 +1,32 @@
 import { useState } from "react";
 import HeroBanner from "@/polymet/components/hero-banner";
-import ProductGrid from "@/polymet/components/product-grid";
-import ProductDetailModal from "@/polymet/components/product-detail-modal";
-import { PRODUCTS, Product } from "@/polymet/data/products-data";
+import JerseyGrid from "@/polymet/components/jersey-grid";
+import JerseyDetailModal from "@/polymet/components/jersey-detail-modal";
+import { JERSEYS, Jersey } from "@/polymet/data/jerseys-data";
 import { useCart } from "@/polymet/data/cart-context";
 
 export default function HomePage() {
-  const [category, setCategory] = useState("all");
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [edition, setEdition] = useState("all");
+  const [size, setSize] = useState("all");
+  const [sort, setSort] = useState("relevance");
+  const [selectedJersey, setSelectedJersey] = useState<Jersey | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const { addItem } = useCart();
 
-  const filteredProducts =
-    category === "all"
-      ? PRODUCTS
-      : PRODUCTS.filter((product) => product.category === category);
-
-  const handleSelectProduct = (product: Product) => {
-    setSelectedProduct(product);
+  const handleSelectJersey = (jersey: Jersey) => {
+    setSelectedJersey(jersey);
     setModalOpen(true);
+  };
+
+  const handleQuickAdd = (jersey: Jersey) => {
+    const firstAvailable = jersey.sizes.find((s) => s.inStock);
+    if (!firstAvailable) return;
+    addItem({
+      jersey,
+      size: firstAvailable.size,
+      versionId: "hincha",
+      quantity: 1,
+    });
   };
 
   return (
@@ -26,25 +34,29 @@ export default function HomePage() {
       <HeroBanner />
 
       <div className="px-4 sm:px-6">
-        <ProductGrid
-          products={filteredProducts}
-          activeCategory={category}
-          onCategoryChange={setCategory}
-          onSelectProduct={handleSelectProduct}
-          onAddToCart={(product) => addItem(product, 1)}
+        <JerseyGrid
+          jerseys={JERSEYS}
+          edition={edition}
+          onEditionChange={setEdition}
+          size={size}
+          onSizeChange={setSize}
+          sort={sort}
+          onSortChange={setSort}
+          onSelectJersey={handleSelectJersey}
+          onAddToCart={handleQuickAdd}
         />
       </div>
 
-      <ProductDetailModal
-        product={selectedProduct}
+      <JerseyDetailModal
+        jersey={selectedJersey}
         open={modalOpen}
         onOpenChange={setModalOpen}
-        onAddToCart={(product, quantity) => {
-          addItem(product, quantity);
+        onAddToCart={(jersey, size, versionId, quantity) => {
+          addItem({ jersey, size, versionId, quantity });
           setModalOpen(false);
         }}
-        onBuyNow={(product, quantity) => {
-          addItem(product, quantity);
+        onBuyNow={(jersey, size, versionId, quantity) => {
+          addItem({ jersey, size, versionId, quantity });
           setModalOpen(false);
         }}
       />
