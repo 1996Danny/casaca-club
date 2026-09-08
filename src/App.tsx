@@ -1,13 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import BoutiqueStorePrototype from "@/store/prototypes/boutique-store";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<div>Hello World</div>} />
-      </Routes>
-    </BrowserRouter>
-  );
+export default function BoutiqueStorePrototypeRender() {
+  return <BoutiqueStorePrototype />;
 }
-
-export default App;
