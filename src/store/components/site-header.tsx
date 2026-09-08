@@ -29,7 +29,7 @@ export default function SiteHeader({
           <span className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
             <ShirtIcon className="h-[18px] w-[18px]" />
           </span>
-          Camisetas<span className="text-primary">11</span>
+          Casaca<span className="text-primary">Club</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">

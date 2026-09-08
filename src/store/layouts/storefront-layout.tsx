@@ -32,10 +32,10 @@ export default function StorefrontLayout({ children }: StorefrontLayoutProps) {
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-10 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <div>
             <span className="font-semibold text-foreground">
-              Terra Boutique
+              Casaca Club
             </span>
             <p className="mt-1 text-xs">
-              Piezas artesanales, hechas en pequeños lotes.
+              Camisetas de selecciones, originales y de calidad.
             </p>
           </div>
           <div className="flex gap-6 text-xs">
@@ -45,7 +45,7 @@ export default function StorefrontLayout({ children }: StorefrontLayoutProps) {
             <a href="/#catalogo" className="hover:text-foreground">
               Catálogo
             </a>
-            <span>© {new Date().getFullYear()} Terra Boutique</span>
+            <span>© {new Date().getFullYear()} Casaca Club</span>
           </div>
         </div>
       </footer>

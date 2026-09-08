@@ -47,8 +47,8 @@ export default function CheckoutFailurePage() {
 
       <p className="mt-8 text-xs text-muted-foreground">
         ¿Necesitás ayuda? Escribinos a{" "}
-        <a href="mailto:hola@terraboutique.com" className="text-primary underline-offset-2 hover:underline">
-          hola@terraboutique.com
+        <a href="mailto:hola@casacaclub.com" className="text-primary underline-offset-2 hover:underline">
+          hola@casacaclub.com
         </a>
       </p>
     </div>
