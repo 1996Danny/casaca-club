@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "nombre": "Camiseta Selección Albiceleste Eco-Edition",
+    "descripcion": "Camiseta inspirada en la selección albiceleste, confeccionada 100% en poliéster reciclado de botellas PET y tintas de base de agua libres de tóxicos.",
+    "precio_simulado": 32900.00,
+    "imagen_ia_url": "assets/img/camiseta-01-albiceleste.webp",
+    "categoria": "Selecciones Clásicas"
+  },
+  {
+    "id": 2,
+    "nombre": "Camiseta Verde Canarinha Reciclada",
+    "descripcion": "Homenaje al verde y amarillo sudamericano, tejida con hilado reciclado post-consumo y proceso de teñido de bajo impacto hídrico.",
+    "precio_simulado": 31500.00,
+    "imagen_ia_url": "assets/img/camiseta-02-canarinha.webp",
+    "categoria": "Selecciones Clásicas"
+  },
+  {
+    "id": 3,
+    "nombre": "Camiseta Azul Imperio Retro Sostenible",
+    "descripcion": "Diseño retro de los años '90 reversionado en tela técnica reciclada, con escudo bordado en hilo de algodón orgánico certificado.",
+    "precio_simulado": 28900.00,
+    "imagen_ia_url": "assets/img/camiseta-03-azul-imperio.webp",
+    "categoria": "Retro Sostenible"
+  },
+  {
+    "id": 4,
+    "nombre": "Camiseta Roja Vikinga Edición Especial",
+    "descripcion": "Edición limitada con estampado inspirado en motivos nórdicos, fabricada en fibra técnica reciclada con costuras reforzadas de producción ética.",
+    "precio_simulado": 36700.00,
+    "imagen_ia_url": "assets/img/camiseta-04-roja-vikinga.webp",
+    "categoria": "Edición Especial"
+  },
+  {
+    "id": 5,
+    "nombre": "Camiseta Blanca Halcones del Sur Retro Sostenible",
+    "descripcion": "Recreación de las clásicas casacas blancas de los '80, tejida en algodón orgánico mezclado con poliéster reciclado transpirable.",
+    "precio_simulado": 27400.00,
+    "imagen_ia_url": "assets/img/camiseta-05-halcones-sur.webp",
+    "categoria": "Retro Sostenible"
+  },
+  {
+    "id": 6,
+    "nombre": "Camiseta Verde Esmeralda Eco-Performance",
+    "descripcion": "Camiseta de alto rendimiento con tecnología de secado rápido, elaborada con fibras recicladas y proceso de fabricación con huella de carbono compensada.",
+    "precio_simulado": 34200.00,
+    "imagen_ia_url": "assets/img/camiseta-06-verde-esmeralda.webp",
+    "categoria": "Edición Especial"
+  },
+  {
+    "id": 7,
+    "nombre": "Camiseta Celeste Andina Selecciones Clásicas",
+    "descripcion": "Diseño inspirado en la cordillera andina, confeccionada con hilado reciclado y detalles reflectivos elaborados con materiales reutilizados.",
+    "precio_simulado": 29800.00,
+    "imagen_ia_url": "assets/img/camiseta-07-celeste-andina.webp",
+    "categoria": "Selecciones Clásicas"
+  },
+  {
+    "id": 8,
+    "nombre": "Camiseta Naranja Tropical Edición Especial",
+    "descripcion": "Estampado tropical de edición limitada, producido con tintes naturales y tela reciclada certificada bajo estándares de comercio justo.",
+    "precio_simulado": 33500.00,
+    "imagen_ia_url": "assets/img/camiseta-08-naranja-tropical.webp",
+    "categoria": "Edición Especial"
+  }
+]

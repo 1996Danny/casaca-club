@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casaca Club | Vista previa Sprint 2</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="navbar contenedor">
+      <a href="#inicio" class="navbar__marca">
+        <span class="navbar__logo" aria-hidden="true">🏆</span>
+        <span>Casaca <strong>Club</strong></span>
+      </a>
+      <nav class="navbar__nav" aria-label="Navegación principal">
+        <ul class="navbar__lista">
+          <li><a href="#inicio" class="navbar__link">Inicio</a></li>
+          <li><a href="#catalogo" class="navbar__link">Catálogo</a></li>
+          <li><a href="#checkout" class="navbar__link">Checkout</a></li>
+          <li><a href="#footer" class="navbar__link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="hero__contenido contenedor">
+        <p class="hero__etiqueta">Triple impacto: social · ambiental · económico</p>
+        <h1 class="hero__titulo">Camisetas de selecciones, con conciencia sostenible</h1>
+        <p class="hero__texto">
+          Casaca Club diseña camisetas deportivas de fantasía confeccionadas con telas recicladas
+          y producción ética, para que vibres con tu selección sin resignar impacto positivo.
+        </p>
+        <div class="hero__acciones">
+          <a href="#catalogo" class="boton boton--primario">Ver catálogo</a>
+          <a href="#checkout" class="boton boton--secundario">Simular compra</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalogo contenedor" id="catalogo" aria-labelledby="catalogo-titulo">
+      <header class="seccion__encabezado">
+        <h2 id="catalogo-titulo">Catálogo de camisetas</h2>
+        <p>Diseños de fantasía, confeccionados con telas recicladas y producción ética.</p>
+      </header>
+
+      <div class="catalogo__grid">
+
+        <article class="tarjeta-producto">
+          <div class="tarjeta-producto__imagen-wrapper">
+            <img class="tarjeta-producto__imagen" src="https://placehold.co/400x300/1d4e89/ffffff?text=Albiceleste" alt="Camiseta Selección Albiceleste Eco-Edition" loading="lazy">
+          </div>
+          <div class="tarjeta-producto__cuerpo">
+            <span class="tarjeta-producto__categoria">Selecciones Clásicas</span>
+            <h3 class="tarjeta-producto__nombre">Camiseta Selección Albiceleste Eco-Edition</h3>
+            <p class="tarjeta-producto__descripcion">Confeccionada 100% en poliéster reciclado de botellas PET y tintas de base de agua libres de tóxicos.</p>
+            <div class="tarjeta-producto__pie">
+              <span class="tarjeta-producto__precio">$32.900,00</span>
+              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto">
+          <div class="tarjeta-producto__imagen-wrapper">
+            <img class="tarjeta-producto__imagen" src="https://placehold.co/400x300/2f9e6e/ffffff?text=Canarinha" alt="Camiseta Verde Canarinha Reciclada" loading="lazy">
+          </div>
+          <div class="tarjeta-producto__cuerpo">
+            <span class="tarjeta-producto__categoria">Selecciones Clásicas</span>
+            <h3 class="tarjeta-producto__nombre">Camiseta Verde Canarinha Reciclada</h3>
+            <p class="tarjeta-producto__descripcion">Tejida con hilado reciclado post-consumo y proceso de teñido de bajo impacto hídrico.</p>
+            <div class="tarjeta-producto__pie">
+              <span class="tarjeta-producto__precio">$31.500,00</span>
+              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto">
+          <div class="tarjeta-producto__imagen-wrapper">
+            <img class="tarjeta-producto__imagen" src="https://placehold.co/400x300/123a66/ffffff?text=Azul+Imperio" alt="Camiseta Azul Imperio Retro Sostenible" loading="lazy">
+          </div>
+          <div class="tarjeta-producto__cuerpo">
+            <span class="tarjeta-producto__categoria">Retro Sostenible</span>
+            <h3 class="tarjeta-producto__nombre">Camiseta Azul Imperio Retro Sostenible</h3>
+            <p class="tarjeta-producto__descripcion">Diseño retro de los años '90 en tela técnica reciclada, con escudo bordado en algodón orgánico.</p>
+            <div class="tarjeta-producto__pie">
+              <span class="tarjeta-producto__precio">$28.900,00</span>
+              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto">
+          <div class="tarjeta-producto__imagen-wrapper">
+            <img class="tarjeta-producto__imagen" src="https://placehold.co/400x300/c0392b/ffffff?text=Roja+Vikinga" alt="Camiseta Roja Vikinga Edición Especial" loading="lazy">
+          </div>
+          <div class="tarjeta-producto__cuerpo">
+            <span class="tarjeta-producto__categoria">Edición Especial</span>
+            <h3 class="tarjeta-producto__nombre">Camiseta Roja Vikinga Edición Especial</h3>
+            <p class="tarjeta-producto__descripcion">Estampado inspirado en motivos nórdicos, fibra técnica reciclada con costuras de producción ética.</p>
+            <div class="tarjeta-producto__pie">
+              <span class="tarjeta-producto__precio">$36.700,00</span>
+              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto">
+          <div class="tarjeta-producto__imagen-wrapper">
+            <img class="tarjeta-producto__imagen" src="https://placehold.co/400x300/8a94a3/ffffff?text=Halcones+del+Sur" alt="Camiseta Blanca Halcones del Sur Retro Sostenible" loading="lazy">
+          </div>
+          <div class="tarjeta-producto__cuerpo">
+            <span class="tarjeta-producto__categoria">Retro Sostenible</span>
+            <h3 class="tarjeta-producto__nombre">Camiseta Blanca Halcones del Sur Retro Sostenible</h3>
+            <p class="tarjeta-producto__descripcion">Recreación de las clásicas casacas blancas de los '80, algodón orgánico + poliéster reciclado.</p>
+            <div class="tarjeta-producto__pie">
+              <span class="tarjeta-producto__precio">$27.400,00</span>
+              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto">
+          <div class="tarjeta-producto__imagen-wrapper">
+            <img class="tarjeta-producto__imagen" src="https://placehold.co/400x300/217a54/ffffff?text=Verde+Esmeralda" alt="Camiseta Verde Esmeralda Eco-Performance" loading="lazy">
+          </div>
+          <div class="tarjeta-producto__cuerpo">
+            <span class="tarjeta-producto__categoria">Edición Especial</span>
+            <h3 class="tarjeta-producto__nombre">Camiseta Verde Esmeralda Eco-Performance</h3>
+            <p class="tarjeta-producto__descripcion">Tecnología de secado rápido, fibras recicladas y huella de carbono compensada.</p>
+            <div class="tarjeta-producto__pie">
+              <span class="tarjeta-producto__precio">$34.200,00</span>
+              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="checkout contenedor" id="checkout" aria-labelledby="checkout-titulo">
+      <header class="seccion__encabezado">
+        <h2 id="checkout-titulo">Simulador de compra / Checkout</h2>
+        <p>Completá el formulario para simular tu pedido. No se procesan pagos reales.</p>
+      </header>
+
+      <form class="formulario" novalidate>
+
+        <div class="formulario__campo formulario__campo--mitad">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana Gómez" required autocomplete="name">
+        </div>
+
+        <div class="formulario__campo formulario__campo--mitad">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="Ej: ana@correo.com" required autocomplete="email">
+        </div>
+
+        <div class="formulario__campo formulario__campo--mitad">
+          <label for="producto">Camiseta</label>
+          <select id="producto" name="producto" required>
+            <option value="" disabled selected>Seleccioná una camiseta</option>
+            <option value="1">Camiseta Selección Albiceleste Eco-Edition</option>
+            <option value="2">Camiseta Verde Canarinha Reciclada</option>
+            <option value="3">Camiseta Azul Imperio Retro Sostenible</option>
+            <option value="4">Camiseta Roja Vikinga Edición Especial</option>
+            <option value="5">Camiseta Blanca Halcones del Sur Retro Sostenible</option>
+            <option value="6">Camiseta Verde Esmeralda Eco-Performance</option>
+          </select>
+        </div>
+
+        <div class="formulario__campo formulario__campo--mitad">
+          <label for="cantidad">Cantidad</label>
+          <input type="number" id="cantidad" name="cantidad" min="1" max="99" value="1" required>
+        </div>
+
+        <div class="formulario__campo">
+          <label for="comentario">Comentario (opcional)</label>
+          <textarea id="comentario" name="comentario" rows="3" placeholder="Talle, dedicatoria u otra aclaración..."></textarea>
+        </div>
+
+        <div class="formulario__acciones">
+          <button type="submit" class="boton boton--primario">Simular compra</button>
+          <button type="reset" class="boton boton--secundario">Limpiar</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="footer__contenido contenedor">
+
+      <div class="footer__bloque">
+        <p class="footer__marca">🏆 Casaca Club</p>
+        <p>Camisetas deportivas de triple impacto. Proyecto integrador - IES René Favaloro.</p>
+      </div>
+
+      <nav class="footer__bloque" aria-label="Enlaces del footer">
+        <h3>Enlaces</h3>
+        <ul class="footer__lista">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#checkout">Checkout</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__bloque">
+        <h3>Contacto</h3>
+        <ul class="footer__lista">
+          <li><a href="mailto:contacto@casacaclub.edu.ar">contacto@casacaclub.edu.ar</a></li>
+          <li>IES René Favaloro</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__creditos contenedor">
+      <p>&copy; 2026 Casaca Club. Proyecto académico sin fines comerciales - Sprint 2.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
