@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Casaca Club | Vista previa Sprint 2</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -19,6 +20,7 @@
           <li><a href="#inicio" class="navbar__link">Inicio</a></li>
           <li><a href="#catalogo" class="navbar__link">Catálogo</a></li>
           <li><a href="#checkout" class="navbar__link">Checkout</a></li>
+          <li><a href="#privacidad" class="navbar__link">Privacidad</a></li>
           <li><a href="#footer" class="navbar__link">Contacto</a></li>
         </ul>
       </nav>
@@ -52,90 +54,96 @@
 
         <article class="tarjeta-producto">
           <div class="tarjeta-producto__imagen-wrapper">
-            <img class="tarjeta-producto__imagen" src="https://placehold.co/400x300/1d4e89/ffffff?text=Albiceleste" alt="Camiseta Selección Albiceleste Eco-Edition" loading="lazy">
+            <img class="tarjeta-producto__imagen" src="assets/img/argentinafrente.jpg" alt="Camiseta Albiceleste Eco-Edition, vista frontal" loading="lazy">
+            <img class="tarjeta-producto__imagen tarjeta-producto__imagen--espalda" src="assets/img/argentinaatras.jpg" alt="Camiseta Albiceleste Eco-Edition, vista de espalda" loading="lazy">
           </div>
           <div class="tarjeta-producto__cuerpo">
             <span class="tarjeta-producto__categoria">Selecciones Clásicas</span>
-            <h3 class="tarjeta-producto__nombre">Camiseta Selección Albiceleste Eco-Edition</h3>
-            <p class="tarjeta-producto__descripcion">Confeccionada 100% en poliéster reciclado de botellas PET y tintas de base de agua libres de tóxicos.</p>
+            <h3 class="tarjeta-producto__nombre">Camiseta Albiceleste Eco-Edition</h3>
+            <p class="tarjeta-producto__descripcion">Clásicas bastones celestes y blancos, confeccionada 100% en poliéster reciclado de botellas PET y tintas de base de agua libres de tóxicos.</p>
             <div class="tarjeta-producto__pie">
               <span class="tarjeta-producto__precio">$32.900,00</span>
-              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton">Comprar</a>
+              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton" data-producto-id="1">Comprar</a>
             </div>
           </div>
         </article>
 
         <article class="tarjeta-producto">
           <div class="tarjeta-producto__imagen-wrapper">
-            <img class="tarjeta-producto__imagen" src="https://placehold.co/400x300/2f9e6e/ffffff?text=Canarinha" alt="Camiseta Verde Canarinha Reciclada" loading="lazy">
+            <img class="tarjeta-producto__imagen" src="assets/img/brasilfrente.jpg" alt="Camiseta Amarilla Canarinha Reciclada, vista frontal" loading="lazy">
+            <img class="tarjeta-producto__imagen tarjeta-producto__imagen--espalda" src="assets/img/brasilatras.jpg" alt="Camiseta Amarilla Canarinha Reciclada, vista de espalda" loading="lazy">
           </div>
           <div class="tarjeta-producto__cuerpo">
             <span class="tarjeta-producto__categoria">Selecciones Clásicas</span>
-            <h3 class="tarjeta-producto__nombre">Camiseta Verde Canarinha Reciclada</h3>
-            <p class="tarjeta-producto__descripcion">Tejida con hilado reciclado post-consumo y proceso de teñido de bajo impacto hídrico.</p>
+            <h3 class="tarjeta-producto__nombre">Camiseta Amarilla Canarinha Reciclada</h3>
+            <p class="tarjeta-producto__descripcion">Homenaje al amarillo y verde sudamericano, tejida con hilado reciclado post-consumo y proceso de teñido de bajo impacto hídrico.</p>
             <div class="tarjeta-producto__pie">
               <span class="tarjeta-producto__precio">$31.500,00</span>
-              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton">Comprar</a>
+              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton" data-producto-id="2">Comprar</a>
             </div>
           </div>
         </article>
 
         <article class="tarjeta-producto">
           <div class="tarjeta-producto__imagen-wrapper">
-            <img class="tarjeta-producto__imagen" src="https://placehold.co/400x300/123a66/ffffff?text=Azul+Imperio" alt="Camiseta Azul Imperio Retro Sostenible" loading="lazy">
+            <img class="tarjeta-producto__imagen" src="assets/img/italiafrente.jpg" alt="Camiseta Azul Imperio Retro Sostenible, vista frontal" loading="lazy">
+            <img class="tarjeta-producto__imagen tarjeta-producto__imagen--espalda" src="assets/img/italiaatras.jpg" alt="Camiseta Azul Imperio Retro Sostenible, vista de espalda" loading="lazy">
           </div>
           <div class="tarjeta-producto__cuerpo">
             <span class="tarjeta-producto__categoria">Retro Sostenible</span>
             <h3 class="tarjeta-producto__nombre">Camiseta Azul Imperio Retro Sostenible</h3>
-            <p class="tarjeta-producto__descripcion">Diseño retro de los años '90 en tela técnica reciclada, con escudo bordado en algodón orgánico.</p>
+            <p class="tarjeta-producto__descripcion">Diseño retro con cuello polo, reversionado en tela técnica reciclada y escudo bordado en hilo de algodón orgánico certificado.</p>
             <div class="tarjeta-producto__pie">
               <span class="tarjeta-producto__precio">$28.900,00</span>
-              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton">Comprar</a>
+              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton" data-producto-id="3">Comprar</a>
             </div>
           </div>
         </article>
 
         <article class="tarjeta-producto">
           <div class="tarjeta-producto__imagen-wrapper">
-            <img class="tarjeta-producto__imagen" src="https://placehold.co/400x300/c0392b/ffffff?text=Roja+Vikinga" alt="Camiseta Roja Vikinga Edición Especial" loading="lazy">
-          </div>
-          <div class="tarjeta-producto__cuerpo">
-            <span class="tarjeta-producto__categoria">Edición Especial</span>
-            <h3 class="tarjeta-producto__nombre">Camiseta Roja Vikinga Edición Especial</h3>
-            <p class="tarjeta-producto__descripcion">Estampado inspirado en motivos nórdicos, fibra técnica reciclada con costuras de producción ética.</p>
-            <div class="tarjeta-producto__pie">
-              <span class="tarjeta-producto__precio">$36.700,00</span>
-              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton">Comprar</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="tarjeta-producto">
-          <div class="tarjeta-producto__imagen-wrapper">
-            <img class="tarjeta-producto__imagen" src="https://placehold.co/400x300/8a94a3/ffffff?text=Halcones+del+Sur" alt="Camiseta Blanca Halcones del Sur Retro Sostenible" loading="lazy">
+            <img class="tarjeta-producto__imagen" src="assets/img/menchfrente.jpg" alt="Camiseta Blanca Águila Retro Sostenible, vista frontal" loading="lazy">
+            <img class="tarjeta-producto__imagen tarjeta-producto__imagen--espalda" src="assets/img/menchatras.jpg" alt="Camiseta Blanca Águila Retro Sostenible, vista de espalda" loading="lazy">
           </div>
           <div class="tarjeta-producto__cuerpo">
             <span class="tarjeta-producto__categoria">Retro Sostenible</span>
-            <h3 class="tarjeta-producto__nombre">Camiseta Blanca Halcones del Sur Retro Sostenible</h3>
-            <p class="tarjeta-producto__descripcion">Recreación de las clásicas casacas blancas de los '80, algodón orgánico + poliéster reciclado.</p>
+            <h3 class="tarjeta-producto__nombre">Camiseta Blanca Águila Retro Sostenible</h3>
+            <p class="tarjeta-producto__descripcion">Recreación de las clásicas casacas blancas de los '80 con vivos tricolor, tejida en algodón orgánico mezclado con poliéster reciclado transpirable.</p>
             <div class="tarjeta-producto__pie">
               <span class="tarjeta-producto__precio">$27.400,00</span>
-              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton">Comprar</a>
+              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton" data-producto-id="4">Comprar</a>
             </div>
           </div>
         </article>
 
         <article class="tarjeta-producto">
           <div class="tarjeta-producto__imagen-wrapper">
-            <img class="tarjeta-producto__imagen" src="https://placehold.co/400x300/217a54/ffffff?text=Verde+Esmeralda" alt="Camiseta Verde Esmeralda Eco-Performance" loading="lazy">
+            <img class="tarjeta-producto__imagen" src="assets/img/franciafrente.jpg" alt="Camiseta Tricolor Bleu Edición Especial, vista frontal" loading="lazy">
+            <img class="tarjeta-producto__imagen tarjeta-producto__imagen--espalda" src="assets/img/franciaatras.jpg" alt="Camiseta Tricolor Bleu Edición Especial, vista de espalda" loading="lazy">
           </div>
           <div class="tarjeta-producto__cuerpo">
             <span class="tarjeta-producto__categoria">Edición Especial</span>
-            <h3 class="tarjeta-producto__nombre">Camiseta Verde Esmeralda Eco-Performance</h3>
-            <p class="tarjeta-producto__descripcion">Tecnología de secado rápido, fibras recicladas y huella de carbono compensada.</p>
+            <h3 class="tarjeta-producto__nombre">Camiseta Tricolor Bleu Edición Especial</h3>
+            <p class="tarjeta-producto__descripcion">Edición limitada blanca con hombros azul y rojo, fabricada en fibra técnica reciclada con costuras reforzadas de producción ética.</p>
             <div class="tarjeta-producto__pie">
               <span class="tarjeta-producto__precio">$34.200,00</span>
-              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton">Comprar</a>
+              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton" data-producto-id="5">Comprar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-producto">
+          <div class="tarjeta-producto__imagen-wrapper">
+            <img class="tarjeta-producto__imagen" src="assets/img/japonfrente.jpg" alt="Camiseta Samurái Azul Eco-Performance, vista frontal" loading="lazy">
+            <img class="tarjeta-producto__imagen tarjeta-producto__imagen--espalda" src="assets/img/japonatras.jpg" alt="Camiseta Samurái Azul Eco-Performance, vista de espalda" loading="lazy">
+          </div>
+          <div class="tarjeta-producto__cuerpo">
+            <span class="tarjeta-producto__categoria">Edición Especial</span>
+            <h3 class="tarjeta-producto__nombre">Camiseta Samurái Azul Eco-Performance</h3>
+            <p class="tarjeta-producto__descripcion">Camiseta de alto rendimiento con tecnología de secado rápido, elaborada con fibras recicladas y proceso de fabricación con huella de carbono compensada.</p>
+            <div class="tarjeta-producto__pie">
+              <span class="tarjeta-producto__precio">$36.700,00</span>
+              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton" data-producto-id="6">Comprar</a>
             </div>
           </div>
         </article>
@@ -165,12 +173,12 @@
           <label for="producto">Camiseta</label>
           <select id="producto" name="producto" required>
             <option value="" disabled selected>Seleccioná una camiseta</option>
-            <option value="1">Camiseta Selección Albiceleste Eco-Edition</option>
-            <option value="2">Camiseta Verde Canarinha Reciclada</option>
-            <option value="3">Camiseta Azul Imperio Retro Sostenible</option>
-            <option value="4">Camiseta Roja Vikinga Edición Especial</option>
-            <option value="5">Camiseta Blanca Halcones del Sur Retro Sostenible</option>
-            <option value="6">Camiseta Verde Esmeralda Eco-Performance</option>
+            <option value="1" data-precio="32900">Camiseta Albiceleste Eco-Edition</option>
+            <option value="2" data-precio="31500">Camiseta Amarilla Canarinha Reciclada</option>
+            <option value="3" data-precio="28900">Camiseta Azul Imperio Retro Sostenible</option>
+            <option value="4" data-precio="27400">Camiseta Blanca Águila Retro Sostenible</option>
+            <option value="5" data-precio="34200">Camiseta Tricolor Bleu Edición Especial</option>
+            <option value="6" data-precio="36700">Camiseta Samurái Azul Eco-Performance</option>
           </select>
         </div>
 
@@ -184,11 +192,93 @@
           <textarea id="comentario" name="comentario" rows="3" placeholder="Talle, dedicatoria u otra aclaración..."></textarea>
         </div>
 
+        <div class="formulario__campo formulario__campo--consentimiento">
+          <input type="checkbox" id="consentimiento" name="consentimiento" required>
+          <label for="consentimiento">
+            Leí y acepto la <a href="#privacidad">Política de Privacidad</a>. Presto mi consentimiento libre,
+            expreso e informado para el tratamiento de mis datos con fines exclusivos de simulación (Ley 25.326).
+          </label>
+        </div>
+
         <div class="formulario__acciones">
           <button type="submit" class="boton boton--primario">Simular compra</button>
           <button type="reset" class="boton boton--secundario">Limpiar</button>
         </div>
+
+        <p class="formulario__mensaje" id="formulario-mensaje" role="status" aria-live="polite" hidden></p>
       </form>
+    </section>
+
+    <section class="privacidad contenedor" id="privacidad" aria-labelledby="privacidad-titulo">
+      <header class="seccion__encabezado">
+        <h2 id="privacidad-titulo">Política de Privacidad y Protección de Datos Personales</h2>
+        <p>Conforme a la Ley 25.326 de Protección de los Datos Personales (Habeas Data) y su Decreto Reglamentario 1558/2001.</p>
+      </header>
+
+      <div class="privacidad__cuerpo">
+
+        <article class="privacidad__clausula">
+          <h3>1. Responsable del tratamiento</h3>
+          <p>
+            El responsable de la base de datos es el equipo de Casaca Club, proyecto académico de la Tecnicatura
+            Superior en Desarrollo de Software del IES René Favaloro. Contacto:
+            <a href="mailto:contacto@casacaclub.edu.ar">contacto@casacaclub.edu.ar</a>.
+          </p>
+        </article>
+
+        <article class="privacidad__clausula">
+          <h3>2. Datos recolectados</h3>
+          <p>
+            En el formulario de simulación de compra se solicitan únicamente: nombre completo, correo electrónico,
+            camiseta elegida, cantidad y un comentario opcional. No se solicitan datos sensibles (art. 2 de la
+            Ley 25.326) ni datos de medios de pago.
+          </p>
+        </article>
+
+        <article class="privacidad__clausula">
+          <h3>3. Finalidad del tratamiento</h3>
+          <p>
+            Los datos se utilizan con el único fin de simular un pedido y mostrar su resumen en pantalla. No se
+            usan con fines comerciales, publicitarios ni de elaboración de perfiles, y no se ceden a terceros
+            (arts. 4 y 11 de la Ley 25.326).
+          </p>
+        </article>
+
+        <article class="privacidad__clausula">
+          <h3>4. Mecanismos de protección del lado del cliente</h3>
+          <ul class="privacidad__lista">
+            <li>Los datos se procesan exclusivamente en el navegador del usuario: no se envían a ningún servidor ni se almacenan en bases de datos.</li>
+            <li>No se guardan en cookies, <em>localStorage</em> ni otro almacenamiento persistente; se descartan al limpiar el formulario o cerrar la página.</li>
+            <li>Principio de minimización: sólo se piden los datos estrictamente necesarios para la simulación.</li>
+            <li>El envío requiere consentimiento previo, expreso e informado del titular (art. 5).</li>
+          </ul>
+        </article>
+
+        <article class="privacidad__clausula privacidad__clausula--ancha">
+          <h3>5. Derechos ARCO</h3>
+          <p>El titular de los datos puede ejercer en forma gratuita los siguientes derechos escribiendo al correo de contacto:</p>
+          <ul class="privacidad__lista">
+            <li><strong>Acceso:</strong> conocer qué datos suyos se tratan (art. 14).</li>
+            <li><strong>Rectificación:</strong> corregir datos inexactos o incompletos (art. 16).</li>
+            <li><strong>Cancelación:</strong> solicitar la supresión de sus datos (art. 16).</li>
+            <li><strong>Oposición:</strong> oponerse al tratamiento o revocar el consentimiento otorgado (art. 27).</li>
+          </ul>
+          <p>Las solicitudes de rectificación o supresión se responden dentro de los 5 días hábiles de recibidas; las de acceso, dentro de los 10 días corridos.</p>
+        </article>
+
+        <article class="privacidad__clausula privacidad__clausula--ancha privacidad__clausula--aviso">
+          <h3>6. Aviso legal obligatorio</h3>
+          <p>
+            El titular de los datos personales tiene la facultad de ejercer el derecho de acceso a los mismos en
+            forma gratuita a intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo al
+            efecto conforme lo establecido en el artículo 14, inciso 3 de la Ley N° 25.326. La AGENCIA DE ACCESO A
+            LA INFORMACIÓN PÚBLICA, en su carácter de Órgano de Control de la Ley N° 25.326, tiene la atribución
+            de atender las denuncias y reclamos que interpongan quienes resulten afectados en sus derechos por
+            incumplimiento de las normas vigentes en materia de protección de datos personales.
+          </p>
+        </article>
+
+      </div>
     </section>
 
   </main>
@@ -207,6 +297,7 @@
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#catalogo">Catálogo</a></li>
           <li><a href="#checkout">Checkout</a></li>
+          <li><a href="#privacidad">Política de Privacidad</a></li>
         </ul>
       </nav>
 
@@ -217,10 +308,18 @@
           <li>IES René Favaloro</li>
         </ul>
       </div>
+
+      <div class="footer__bloque">
+        <h3>Licencia</h3>
+        <ul class="footer__lista">
+          <li>Código fuente: <a href="LICENSE" rel="license">GNU GPL v3.0</a></li>
+          <li>Imágenes y textos generados con IA: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">CC BY-NC-SA 4.0</a></li>
+        </ul>
+      </div>
     </div>
 
     <div class="footer__creditos contenedor">
-      <p>&copy; 2026 Casaca Club. Proyecto académico sin fines comerciales - Sprint 2.</p>
+      <p>&copy; 2026 Casaca Club. Proyecto académico sin fines comerciales - Sprint 2. Código bajo GPL-3.0 · Contenido bajo CC BY-NC-SA 4.0.</p>
     </div>
   </footer>
 
