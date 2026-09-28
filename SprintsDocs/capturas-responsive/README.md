@@ -6,7 +6,7 @@ El sitio de Casaca Club se adapta correctamente a móvil, tablet y escritorio: e
 
 ## Alcance
 
-- **Sitio probado:** `casaca-club-sprint2/index.html` (rama `sprint_2`, commit `cb81df5`).
+- **Sitio probado:** `casaca-club-sprint2/index.html` (rama `sprint_2`, con el menú hamburguesa agregado tras la primera ronda de pruebas).
 - **Secciones revisadas:** encabezado y menú, portada (hero), catálogo de camisetas, formulario de checkout, Política de Privacidad y footer.
 - **Fuera del alcance:** navegadores distintos de Chrome, pruebas con usuarios reales y rendimiento de carga.
 
@@ -25,20 +25,25 @@ Por cada dispositivo hay dos capturas:
 - **Vista inicial:** lo que el usuario ve al abrir la página, sin hacer scroll.
 - **Página completa:** todo el sitio de arriba abajo, recortado al final del footer.
 
+En móvil se agregó una tercera captura con el menú hamburguesa abierto.
+
 **Corrección aplicada en móvil:** Chrome headless en Windows no permite ventanas de menos de unos 500 px de ancho, por lo que la primera captura de 390 px salió cortada a la derecha (el sitio no tenía ese problema). Para obtener un ancho real de 390 px, el sitio se cargó dentro de un `iframe` de ese ancho exacto y la imagen se recortó con Python (Pillow).
 
 ## Resultados en móvil (390 px)
 
-En móvil todo el contenido se apila en una sola columna y entra en el ancho de la pantalla. La página completa mide 8.417 px de alto.
+En móvil todo el contenido se apila en una sola columna y entra en el ancho de la pantalla. La página completa mide 8.277 px de alto.
 
 ![Móvil 390 px – vista inicial](movil-vista-inicial.png)
 
-- **Encabezado:** el logo queda arriba y el menú pasa a una segunda fila. Los 5 enlaces se reparten en dos renglones gracias a `flex-wrap`, sin cortarse.
+- **Encabezado:** logo a la izquierda y botón hamburguesa (44 × 44 px) a la derecha. El encabezado fijo ocupa unos 76 px (9 % de la pantalla).
+- **Menú abierto:** al tocar el botón, los 5 enlaces se despliegan en una lista vertical con áreas de toque amplias y el ícono pasa a una "X". El menú se cierra al elegir una sección o con la tecla Escape.
 - **Portada:** el título baja a 3 líneas con tipografía fluida (`clamp()`). Los dos botones entran lado a lado.
 - **Catálogo:** 1 camiseta por fila (`minmax(260px, 1fr)`). Las fotos son cuadradas y se ven completas.
 - **Checkout:** todos los campos ocupan el ancho completo, uno debajo del otro.
 - **Privacidad:** las 6 cláusulas en una sola columna.
 - **Footer:** los bloques de marca, enlaces, contacto y licencia se apilan.
+
+![Móvil 390 px – menú abierto](movil-menu-abierto.png)
 
 Página completa: [`movil-pagina-completa.png`](movil-pagina-completa.png)
 
@@ -48,7 +53,7 @@ Desde 768 px el menú sube a la línea del logo y el catálogo, el formulario y 
 
 ![Tablet 768 px – vista inicial](tablet-vista-inicial.png)
 
-- **Encabezado:** logo a la izquierda y menú a la derecha en una sola fila (`order` y `flex-basis: auto`).
+- **Encabezado:** el botón hamburguesa se oculta y el menú vuelve a mostrarse completo, a la derecha del logo en una sola fila (`order` y `flex-basis: auto`).
 - **Portada:** el título baja a 2 líneas y los botones no se parten (`flex-wrap: nowrap`).
 - **Catálogo:** 2 camisetas por fila (`minmax(280px, 1fr)`), 3 filas en total.
 - **Checkout:** nombre y correo lado a lado; lo mismo camiseta y cantidad.
@@ -76,7 +81,7 @@ Página completa: [`escritorio-pagina-completa.png`](escritorio-pagina-completa.
 
 | Sección | Técnica CSS | Móvil (390 px) | Tablet (768 px) | Escritorio (1440 px) | Resultado |
 | --- | --- | --- | --- | --- | --- |
-| Encabezado y menú | Flexbox | Menú en 2da fila, 2 renglones | Logo y menú en 1 fila | Logo y menú en 1 fila | Correcto |
+| Encabezado y menú | Flexbox + JS | Botón hamburguesa, lista vertical al abrir | Logo y menú en 1 fila | Logo y menú en 1 fila | Correcto |
 | Portada (hero) | Flexbox + `clamp()` | Título en 3 líneas | Título en 2 líneas | Título en 2 líneas, más aire | Correcto |
 | Catálogo | CSS Grid `auto-fit` | 1 columna | 2 columnas | 3 columnas | Correcto |
 | Checkout | Flexbox | Campos apilados | Campos de a pares | Campos de a pares, 760 px máx. | Correcto |
@@ -87,11 +92,12 @@ Página completa: [`escritorio-pagina-completa.png`](escritorio-pagina-completa.
 
 La prueba se considera **aprobada**: el sitio cumple la consigna de diseño adaptable con Flexbox y CSS Grid en los tres dispositivos, sin frameworks externos. No se detectaron errores de maquetación.
 
+**Mejora ya aplicada:** en la primera ronda el encabezado fijo ocupaba unos 215 px de 844 en móvil (25 % de la pantalla) porque el menú usaba dos renglones. Se reemplazó por un menú hamburguesa y ahora ocupa unos 76 px. Sin JavaScript el menú sigue visible como antes (mejora progresiva).
+
 **Observaciones de usabilidad para próximos sprints:**
 
 | Observación | Dónde | Mejora propuesta |
 | --- | --- | --- |
-| El encabezado fijo ocupa unos 215 px de 844 (25 % de la pantalla) porque el menú usa dos renglones. | Móvil | Menú desplegable con botón "hamburguesa". |
 | La foto de espalda aparece al pasar el mouse; en pantallas táctiles sólo se ve al tocar la tarjeta. | Móvil y tablet | Agregar un botón o indicador visible de "Ver espalda". |
 | En tablet, el bloque de licencia del footer queda solo en una segunda fila. | Tablet | Footer en grilla de 2 × 2 entre 768 y 1023 px. |
 

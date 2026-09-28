@@ -201,10 +201,75 @@ h1, h2, h3 {
   font-size: 1.4em;
 }
 
-/* En mobile la lista de navegación reflowea debajo de la marca (sin JS) */
+/* En mobile la lista de navegación reflowea debajo de la marca */
 .navbar__nav {
   flex-basis: 100%;
   order: 3;
+}
+
+/* Botón hamburguesa: sólo existe visualmente cuando hay JavaScript (clase .js
+   en <html>, la agrega js/main.js). Sin JS el menú queda siempre visible. */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid var(--color-borde);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.navbar__toggle-barra {
+  display: block;
+  height: 2px;
+  background-color: var(--color-primario-oscuro);
+  border-radius: 2px;
+  transition: transform var(--transicion), opacity var(--transicion);
+}
+
+.js .navbar__toggle {
+  display: flex;
+}
+
+.js .navbar__nav {
+  display: none;
+}
+
+.js .navbar__nav--abierto {
+  display: block;
+}
+
+/* Menú desplegado en mobile: lista vertical con áreas de toque amplias */
+.js .navbar__lista {
+  flex-direction: column;
+  gap: 0;
+  padding-block: var(--espacio-xs);
+}
+
+.js .navbar__link {
+  padding: 0.75rem 0.25rem;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.js .navbar__lista li:last-child .navbar__link {
+  border-bottom: none;
+}
+
+/* Las tres barras se transforman en una "X" con el menú abierto */
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-barra:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-barra:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-barra:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .navbar__lista {
@@ -607,14 +672,28 @@ h1, h2, h3 {
 
 /* --- Tablets (~768px en adelante) --- */
 @media (min-width: 768px) {
-  .navbar__nav {
+  .navbar__nav,
+  .js .navbar__nav {
+    display: block;
     flex-basis: auto;
     order: 2;
   }
 
-  .navbar__lista {
+  .js .navbar__toggle {
+    display: none;
+  }
+
+  .navbar__lista,
+  .js .navbar__lista {
+    flex-direction: row;
+    gap: var(--espacio-sm) var(--espacio-md);
     padding-block: 0;
     border-top: none;
+  }
+
+  .js .navbar__link {
+    padding: 0.4rem 0.25rem;
+    border-bottom: none;
   }
 
   .catalogo__grid {
