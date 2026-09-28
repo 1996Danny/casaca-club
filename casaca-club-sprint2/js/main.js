@@ -1,12 +1,53 @@
 /* =====================================================================
    CASACA CLUB - SCRIPT PRINCIPAL (Sprint 2)
    JavaScript puro, sin librerías. Mejora progresiva: el sitio funciona
-   sin JS; este script sólo agrega comodidades al checkout simulado.
+   sin JS; este script agrega el menú hamburguesa en mobile y
+   comodidades al checkout simulado.
    Privacidad: los datos del formulario NO se envían ni se almacenan
    (ver sección "Política de Privacidad" del index.html).
    ===================================================================== */
 
+// Marca que hay JS disponible: el CSS sólo oculta el menú mobile con esta clase
+document.documentElement.classList.add("js");
+
 document.addEventListener("DOMContentLoaded", () => {
+  iniciarMenu();
+  iniciarCheckout();
+});
+
+/* Menú hamburguesa: abre y cierra la navegación en pantallas chicas */
+function iniciarMenu() {
+  const boton = document.querySelector(".navbar__toggle");
+  const menu = document.getElementById("menu-principal");
+
+  if (!boton || !menu) return;
+
+  const alternar = (abrir) => {
+    boton.setAttribute("aria-expanded", String(abrir));
+    boton.setAttribute("aria-label", abrir ? "Cerrar menú" : "Abrir menú");
+    menu.classList.toggle("navbar__nav--abierto", abrir);
+  };
+
+  boton.addEventListener("click", () => {
+    alternar(boton.getAttribute("aria-expanded") !== "true");
+  });
+
+  // Al elegir una sección, el menú se cierra para dejar ver el contenido
+  menu.querySelectorAll("a").forEach((enlace) => {
+    enlace.addEventListener("click", () => alternar(false));
+  });
+
+  // Escape cierra el menú y devuelve el foco al botón
+  document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape" && boton.getAttribute("aria-expanded") === "true") {
+      alternar(false);
+      boton.focus();
+    }
+  });
+}
+
+/* Checkout simulado: preselección de producto, validación y resumen */
+function iniciarCheckout() {
   const formulario = document.querySelector(".formulario");
   const selectProducto = document.getElementById("producto");
   const inputCantidad = document.getElementById("cantidad");
@@ -66,4 +107,4 @@ document.addEventListener("DOMContentLoaded", () => {
     mensaje.hidden = true;
     mensaje.textContent = "";
   }
-});
+}
