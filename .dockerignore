@@ -1,0 +1,24 @@
+# Dependencias y builds locales (se reinstalan y compilan dentro de la imagen)
+node_modules
+dist
+dist-ssr
+
+# Control de versiones y editores
+.git
+.gitignore
+.vscode
+.idea
+
+# Variables de entorno locales
+.env
+.env.*
+!.env.example
+
+# Material que no hace falta en la imagen
+SprintsDocs
+casaca-club-sprint2
+*.md
+*.log
+Dockerfile
+docker-compose.yml
+.dockerignore
