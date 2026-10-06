@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    image: casaca-club-app:latest
+    container_name: casaca-club-app
+    restart: unless-stopped
+    ports:
+      # Puerto del VPS -> puerto 80 del contenedor. Cambiar HOST_PORT en .env si hace falta
+      - "${HOST_PORT:-80}:80"
+    environment:
+      # Dominio(s) que atiende nginx. Con "localhost" también responde por la IP del VPS
+      NGINX_HOST: ${NGINX_HOST:-localhost}
