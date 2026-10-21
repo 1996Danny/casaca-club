@@ -1,29 +1,42 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle2Icon, PackageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { formatPrice } from "@/store/data/cart-context";
 
-const MOCK_ORDER = {
-  number: "TB-48213",
-  date: new Date().toLocaleDateString("es-AR", {
+interface PedidoGuardado {
+  items: {
+    nombre: string;
+    talle: string;
+    version: string;
+    cantidad: number;
+    subtotal: number;
+  }[];
+  subtotal: number;
+}
+
+const VERSION_LABEL: Record<string, string> = {
+  hincha: "Hincha",
+  jugador: "Jugador",
+};
+
+function leerUltimoPedido(): PedidoGuardado | null {
+  try {
+    const guardado = sessionStorage.getItem("casacaClub.ultimoPedido");
+    return guardado ? (JSON.parse(guardado) as PedidoGuardado) : null;
+  } catch {
+    return null;
+  }
+}
+
+export default function CheckoutSuccessPage() {
+  const pedido = useMemo(() => leerUltimoPedido(), []);
+  const fecha = new Date().toLocaleDateString("es-AR", {
     day: "2-digit",
     month: "long",
     year: "numeric",
-  }),
-  items: [
-    { name: "Vestido Lino Habana", quantity: 1, price: 89900 },
-    { name: "Sandalias Cuero Terra", quantity: 1, price: 74900 },
-  ],
-
-  shipping: 0,
-};
-
-export default function CheckoutSuccessPage() {
-  const subtotal = MOCK_ORDER.items.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  });
 
   return (
     <div className="mx-auto flex max-w-lg flex-col items-center px-4 py-16 sm:py-24">
@@ -39,57 +52,43 @@ export default function CheckoutSuccessPage() {
         el seguimiento del envío.
       </p>
 
-      <div className="mt-8 w-full rounded-xl border border-border bg-card p-6 shadow-sm">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-xs uppercase tracking-wide text-muted-foreground">
-              Número de orden
-            </p>
-            <p className="font-semibold text-foreground">
-              {MOCK_ORDER.number}
-            </p>
-          </div>
-          <div className="text-right">
-            <p className="text-xs uppercase tracking-wide text-muted-foreground">
-              Fecha
-            </p>
-            <p className="font-medium text-foreground">{MOCK_ORDER.date}</p>
-          </div>
-        </div>
+      {pedido ? (
+        <div className="mt-8 w-full rounded-xl border border-border bg-card p-6 shadow-sm">
+          <p className="text-xs uppercase tracking-wide text-muted-foreground">
+            Fecha
+          </p>
+          <p className="font-medium text-foreground">{fecha}</p>
 
-        <Separator className="my-4" />
+          <Separator className="my-4" />
 
-        <div className="flex flex-col gap-3">
-          {MOCK_ORDER.items.map((item) => (
-            <div
-              key={item.name}
-              className="flex items-center justify-between text-sm"
-            >
-              <div className="flex items-center gap-2 text-foreground">
-                <PackageIcon className="h-4 w-4 text-muted-foreground" />
-                {item.name}
-                <span className="text-muted-foreground">
-                  × {item.quantity}
+          <div className="flex flex-col gap-3">
+            {pedido.items.map((item, indice) => (
+              <div
+                key={`${item.nombre}-${item.talle}-${item.version}-${indice}`}
+                className="flex items-center justify-between text-sm"
+              >
+                <div className="flex items-center gap-2 text-foreground">
+                  <PackageIcon className="h-4 w-4 text-muted-foreground" />
+                  {item.nombre}
+                  <span className="text-muted-foreground">
+                    · Talle {item.talle} · {VERSION_LABEL[item.version] ?? item.version} × {item.cantidad}
+                  </span>
+                </div>
+                <span className="font-medium text-foreground">
+                  {formatPrice(item.subtotal)}
                 </span>
               </div>
-              <span className="font-medium text-foreground">
-                {formatPrice(item.price * item.quantity)}
-              </span>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <Separator className="my-4" />
+          <Separator className="my-4" />
 
-        <div className="flex items-center justify-between text-sm text-muted-foreground">
-          <span>Envío</span>
-          <span>{MOCK_ORDER.shipping === 0 ? "Gratis" : formatPrice(MOCK_ORDER.shipping)}</span>
+          <div className="flex items-center justify-between text-base font-semibold text-foreground">
+            <span>Total</span>
+            <span>{formatPrice(pedido.subtotal)}</span>
+          </div>
         </div>
-        <div className="mt-2 flex items-center justify-between text-base font-semibold text-foreground">
-          <span>Total</span>
-          <span>{formatPrice(subtotal + MOCK_ORDER.shipping)}</span>
-        </div>
-      </div>
+      ) : null}
 
       <Button asChild size="lg" className="mt-8 w-full">
         <Link to="/">Volver a la tienda</Link>

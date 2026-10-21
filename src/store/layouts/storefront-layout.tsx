@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SiteHeader from "@/store/components/site-header";
 import MobileBottomNav from "@/store/components/mobile-bottom-nav";
 import CartDrawer from "@/store/components/cart-drawer";
@@ -10,7 +10,6 @@ interface StorefrontLayoutProps {
 }
 
 export default function StorefrontLayout({ children }: StorefrontLayoutProps) {
-  const navigate = useNavigate();
   const {
     lines,
     isOpen,
@@ -59,10 +58,6 @@ export default function StorefrontLayout({ children }: StorefrontLayoutProps) {
         subtotal={subtotal}
         onUpdateQuantity={updateQuantity}
         onRemove={removeItem}
-        onCheckout={() => {
-          closeCart();
-          navigate("/checkout/success");
-        }}
       />
     </div>
   );

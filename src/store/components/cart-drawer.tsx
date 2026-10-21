@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import CartItemRow from "@/store/components/cart-item-row";
-import { CartLine, formatPrice } from "@/store/data/cart-context";
+import { CartLine, formatPrice, getUnitPrice } from "@/store/data/cart-context";
 
 interface CartDrawerProps {
   open: boolean;
@@ -18,7 +18,6 @@ interface CartDrawerProps {
   subtotal: number;
   onUpdateQuantity: (lineId: string, quantity: number) => void;
   onRemove: (lineId: string) => void;
-  onCheckout: () => void;
 }
 
 export default function CartDrawer({
@@ -28,18 +27,59 @@ export default function CartDrawer({
   subtotal,
   onUpdateQuantity,
   onRemove,
-  onCheckout,
 }: CartDrawerProps) {
   const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const isEmpty = lines.length === 0;
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
     if (isEmpty || isCheckingOut) return;
     setIsCheckingOut(true);
-    setTimeout(() => {
+    setError(null);
+
+    try {
+      const respuesta = await fetch("/api/crear-preferencia", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items: lines.map((line) => ({
+            jerseyId: line.jersey.id,
+            size: line.size,
+            versionId: line.versionId,
+            quantity: line.quantity,
+          })),
+        }),
+      });
+
+      const datos = await respuesta.json();
+
+      if (!respuesta.ok || !datos.init_point) {
+        throw new Error(datos.error || `HTTP ${respuesta.status}`);
+      }
+
+      // Se guarda para mostrar el resumen real en /checkout/success: el
+      // carrito (en memoria de React) se pierde al salir del sitio hacia
+      // Mercado Pago y volver, pero sessionStorage sobrevive esa vuelta.
+      sessionStorage.setItem(
+        "casacaClub.ultimoPedido",
+        JSON.stringify({
+          items: lines.map((line) => ({
+            nombre: line.jersey.nation,
+            talle: line.size,
+            version: line.versionId,
+            cantidad: line.quantity,
+            subtotal: getUnitPrice(line.jersey, line.versionId) * line.quantity,
+          })),
+          subtotal,
+        })
+      );
+
+      window.location.href = datos.init_point;
+    } catch (err) {
+      console.error("No se pudo crear la preferencia de Mercado Pago:", err);
+      setError("No se pudo conectar con Mercado Pago. Probá de nuevo en unos minutos.");
       setIsCheckingOut(false);
-      onCheckout();
-    }, 900);
+    }
   };
 
   return (
@@ -110,6 +150,12 @@ export default function CartDrawer({
                 ) : null}
                 Pagar con Mercado Pago
               </Button>
+
+              {error ? (
+                <p className="mt-2 text-center text-xs font-medium text-destructive">
+                  {error}
+                </p>
+              ) : null}
 
               <div className="mt-3 flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
                 <ShieldCheckIcon className="h-3.5 w-3.5 text-[hsl(var(--mercadopago))]" />

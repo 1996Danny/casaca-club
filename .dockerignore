@@ -2,6 +2,8 @@
 node_modules
 dist
 dist-ssr
+server/node_modules
+server/catalog.json
 
 # Control de versiones y editores
 .git
