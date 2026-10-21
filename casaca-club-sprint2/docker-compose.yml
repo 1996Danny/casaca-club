@@ -1,0 +1,33 @@
+services:
+  web:
+    build: .
+    image: casaca-club-sprint2:latest
+    container_name: casaca-club-sprint2
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      # Publicado SOLO en localhost del VPS (127.0.0.1), nunca en 0.0.0.0:
+      # así ninguna otra app ni el mundo exterior puede llegar directo a
+      # este contenedor, salteando el reverse proxy que vaya a atender
+      # casacaclub.shop con HTTPS.
+      - "127.0.0.1:${HOST_PORT:-8081}:80"
+    environment:
+      NGINX_HOST: ${NGINX_HOST:-casacaclub.shop}
+
+  # API de Mercado Pago: crea las preferencias de pago del carrito.
+  # Sin "ports": no se publica en el host, sólo es alcanzable desde "web"
+  # a través de la red interna de este docker-compose (proxy /api/ en
+  # nginx.conf), así el MP_ACCESS_TOKEN nunca queda expuesto afuera.
+  api:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    image: casaca-club-sprint2-api:latest
+    container_name: casaca-club-sprint2-api
+    restart: unless-stopped
+    expose:
+      - "3000"
+    environment:
+      MP_ACCESS_TOKEN: ${MP_ACCESS_TOKEN}
+      SITE_URL: ${SITE_URL:-https://casacaclub.shop}

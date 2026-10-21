@@ -1,0 +1,3 @@
+casacaclub.shop, www.casacaclub.shop {
+	reverse_proxy web:80
+}
