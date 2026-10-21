@@ -1,0 +1,23 @@
+# Secretos: nunca deben llegar al build context de ninguna imagen
+.env
+.env.*
+!.env.example
+
+# Dependencias instaladas en el host: cada imagen las instala de nuevo
+# adentro (ver Dockerfile y server/Dockerfile)
+node_modules
+server/node_modules
+
+# Control de versiones y editores
+.git
+.gitignore
+.vscode
+.idea
+*.log
+
+# Nota: Dockerfile, docker-compose*.yml, Caddyfile, nginx.conf, DEPLOY.md
+# y server/ SÍ deben quedar disponibles en el build context (los usan los
+# COPY explícitos de Dockerfile y server/Dockerfile). Que no terminen
+# servidos como archivos públicos del sitio es responsabilidad del
+# Dockerfile del servicio "web", que copia rutas explícitas en vez de
+# "COPY . .".

@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Casaca Club | Vista previa Sprint 2</title>
+  <title>Casaca Club | Sprint 3-4</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -15,22 +16,55 @@
         <span class="navbar__logo" aria-hidden="true">🏆</span>
         <span>Casaca <strong>Club</strong></span>
       </a>
-      <button type="button" class="navbar__toggle" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
-        <span class="navbar__toggle-barra" aria-hidden="true"></span>
-        <span class="navbar__toggle-barra" aria-hidden="true"></span>
-        <span class="navbar__toggle-barra" aria-hidden="true"></span>
-      </button>
+
+      <div class="navbar__acciones">
+        <button type="button" class="navbar__carrito" id="boton-carrito" aria-haspopup="dialog" aria-controls="panel-carrito" aria-expanded="false" aria-label="Abrir carrito de compras, 0 productos">
+          <span class="navbar__carrito-icono" aria-hidden="true">🛒</span>
+          <span class="navbar__carrito-contador" id="carrito-contador" aria-hidden="true">0</span>
+        </button>
+        <button type="button" class="navbar__toggle" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar__toggle-barra" aria-hidden="true"></span>
+          <span class="navbar__toggle-barra" aria-hidden="true"></span>
+          <span class="navbar__toggle-barra" aria-hidden="true"></span>
+        </button>
+      </div>
+
       <nav class="navbar__nav" id="menu-principal" aria-label="Navegación principal">
         <ul class="navbar__lista">
           <li><a href="#inicio" class="navbar__link">Inicio</a></li>
           <li><a href="#catalogo" class="navbar__link">Catálogo</a></li>
           <li><a href="#checkout" class="navbar__link">Checkout</a></li>
+          <li><a href="#terminos" class="navbar__link">Términos</a></li>
           <li><a href="#privacidad" class="navbar__link">Privacidad</a></li>
           <li><a href="#footer" class="navbar__link">Contacto</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
+  <div class="carrito-panel" id="panel-carrito" role="dialog" aria-modal="true" aria-labelledby="carrito-panel-titulo" hidden>
+    <div class="carrito-panel__fondo" data-cerrar-carrito></div>
+    <div class="carrito-panel__contenido">
+      <header class="carrito-panel__encabezado">
+        <h2 id="carrito-panel-titulo">Tu carrito</h2>
+        <button type="button" class="carrito-panel__cerrar" data-cerrar-carrito aria-label="Cerrar carrito">✕</button>
+      </header>
+
+      <p class="carrito-panel__vacio" id="carrito-vacio">
+        Tu carrito está vacío. Agregá camisetas desde el <a href="#catalogo" data-cerrar-carrito>catálogo</a>.
+      </p>
+
+      <ul class="carrito-panel__lista" id="carrito-lista" aria-live="polite"></ul>
+
+      <footer class="carrito-panel__pie" id="carrito-pie" hidden>
+        <div class="carrito-panel__total">
+          <span>Total simulado</span>
+          <span id="carrito-total">$0,00</span>
+        </div>
+        <a href="#checkout" class="boton boton--primario" id="carrito-ir-checkout" data-cerrar-carrito>Ir a pagar</a>
+      </footer>
+    </div>
+  </div>
 
   <main>
 
@@ -55,105 +89,13 @@
         <p>Diseños de fantasía, confeccionados con telas recicladas y producción ética.</p>
       </header>
 
-      <div class="catalogo__grid">
-
-        <article class="tarjeta-producto">
-          <div class="tarjeta-producto__imagen-wrapper">
-            <img class="tarjeta-producto__imagen" src="assets/img/argentinafrente.jpg" alt="Camiseta Albiceleste Eco-Edition, vista frontal" loading="lazy">
-            <img class="tarjeta-producto__imagen tarjeta-producto__imagen--espalda" src="assets/img/argentinaatras.jpg" alt="Camiseta Albiceleste Eco-Edition, vista de espalda" loading="lazy">
-          </div>
-          <div class="tarjeta-producto__cuerpo">
-            <span class="tarjeta-producto__categoria">Selecciones Clásicas</span>
-            <h3 class="tarjeta-producto__nombre">Camiseta Albiceleste Eco-Edition</h3>
-            <p class="tarjeta-producto__descripcion">Clásicas bastones celestes y blancos, confeccionada 100% en poliéster reciclado de botellas PET y tintas de base de agua libres de tóxicos.</p>
-            <div class="tarjeta-producto__pie">
-              <span class="tarjeta-producto__precio">$32.900,00</span>
-              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton" data-producto-id="1">Comprar</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="tarjeta-producto">
-          <div class="tarjeta-producto__imagen-wrapper">
-            <img class="tarjeta-producto__imagen" src="assets/img/brasilfrente.jpg" alt="Camiseta Amarilla Canarinha Reciclada, vista frontal" loading="lazy">
-            <img class="tarjeta-producto__imagen tarjeta-producto__imagen--espalda" src="assets/img/brasilatras.jpg" alt="Camiseta Amarilla Canarinha Reciclada, vista de espalda" loading="lazy">
-          </div>
-          <div class="tarjeta-producto__cuerpo">
-            <span class="tarjeta-producto__categoria">Selecciones Clásicas</span>
-            <h3 class="tarjeta-producto__nombre">Camiseta Amarilla Canarinha Reciclada</h3>
-            <p class="tarjeta-producto__descripcion">Homenaje al amarillo y verde sudamericano, tejida con hilado reciclado post-consumo y proceso de teñido de bajo impacto hídrico.</p>
-            <div class="tarjeta-producto__pie">
-              <span class="tarjeta-producto__precio">$31.500,00</span>
-              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton" data-producto-id="2">Comprar</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="tarjeta-producto">
-          <div class="tarjeta-producto__imagen-wrapper">
-            <img class="tarjeta-producto__imagen" src="assets/img/italiafrente.jpg" alt="Camiseta Azul Imperio Retro Sostenible, vista frontal" loading="lazy">
-            <img class="tarjeta-producto__imagen tarjeta-producto__imagen--espalda" src="assets/img/italiaatras.jpg" alt="Camiseta Azul Imperio Retro Sostenible, vista de espalda" loading="lazy">
-          </div>
-          <div class="tarjeta-producto__cuerpo">
-            <span class="tarjeta-producto__categoria">Retro Sostenible</span>
-            <h3 class="tarjeta-producto__nombre">Camiseta Azul Imperio Retro Sostenible</h3>
-            <p class="tarjeta-producto__descripcion">Diseño retro con cuello polo, reversionado en tela técnica reciclada y escudo bordado en hilo de algodón orgánico certificado.</p>
-            <div class="tarjeta-producto__pie">
-              <span class="tarjeta-producto__precio">$28.900,00</span>
-              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton" data-producto-id="3">Comprar</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="tarjeta-producto">
-          <div class="tarjeta-producto__imagen-wrapper">
-            <img class="tarjeta-producto__imagen" src="assets/img/menchfrente.jpg" alt="Camiseta Blanca Águila Retro Sostenible, vista frontal" loading="lazy">
-            <img class="tarjeta-producto__imagen tarjeta-producto__imagen--espalda" src="assets/img/menchatras.jpg" alt="Camiseta Blanca Águila Retro Sostenible, vista de espalda" loading="lazy">
-          </div>
-          <div class="tarjeta-producto__cuerpo">
-            <span class="tarjeta-producto__categoria">Retro Sostenible</span>
-            <h3 class="tarjeta-producto__nombre">Camiseta Blanca Águila Retro Sostenible</h3>
-            <p class="tarjeta-producto__descripcion">Recreación de las clásicas casacas blancas de los '80 con vivos tricolor, tejida en algodón orgánico mezclado con poliéster reciclado transpirable.</p>
-            <div class="tarjeta-producto__pie">
-              <span class="tarjeta-producto__precio">$27.400,00</span>
-              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton" data-producto-id="4">Comprar</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="tarjeta-producto">
-          <div class="tarjeta-producto__imagen-wrapper">
-            <img class="tarjeta-producto__imagen" src="assets/img/franciafrente.jpg" alt="Camiseta Tricolor Bleu Edición Especial, vista frontal" loading="lazy">
-            <img class="tarjeta-producto__imagen tarjeta-producto__imagen--espalda" src="assets/img/franciaatras.jpg" alt="Camiseta Tricolor Bleu Edición Especial, vista de espalda" loading="lazy">
-          </div>
-          <div class="tarjeta-producto__cuerpo">
-            <span class="tarjeta-producto__categoria">Edición Especial</span>
-            <h3 class="tarjeta-producto__nombre">Camiseta Tricolor Bleu Edición Especial</h3>
-            <p class="tarjeta-producto__descripcion">Edición limitada blanca con hombros azul y rojo, fabricada en fibra técnica reciclada con costuras reforzadas de producción ética.</p>
-            <div class="tarjeta-producto__pie">
-              <span class="tarjeta-producto__precio">$34.200,00</span>
-              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton" data-producto-id="5">Comprar</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="tarjeta-producto">
-          <div class="tarjeta-producto__imagen-wrapper">
-            <img class="tarjeta-producto__imagen" src="assets/img/japonfrente.jpg" alt="Camiseta Samurái Azul Eco-Performance, vista frontal" loading="lazy">
-            <img class="tarjeta-producto__imagen tarjeta-producto__imagen--espalda" src="assets/img/japonatras.jpg" alt="Camiseta Samurái Azul Eco-Performance, vista de espalda" loading="lazy">
-          </div>
-          <div class="tarjeta-producto__cuerpo">
-            <span class="tarjeta-producto__categoria">Edición Especial</span>
-            <h3 class="tarjeta-producto__nombre">Camiseta Samurái Azul Eco-Performance</h3>
-            <p class="tarjeta-producto__descripcion">Camiseta de alto rendimiento con tecnología de secado rápido, elaborada con fibras recicladas y proceso de fabricación con huella de carbono compensada.</p>
-            <div class="tarjeta-producto__pie">
-              <span class="tarjeta-producto__precio">$36.700,00</span>
-              <a href="#checkout" class="boton boton--primario tarjeta-producto__boton" data-producto-id="6">Comprar</a>
-            </div>
-          </div>
-        </article>
-
+      <div class="catalogo__grid" id="catalogo-grid" aria-live="polite">
+        <p class="catalogo__estado" id="catalogo-estado">Cargando catálogo…</p>
       </div>
+
+      <noscript>
+        <p class="catalogo__estado">Activá JavaScript para ver el catálogo de camisetas, armar tu carrito y simular una compra.</p>
+      </noscript>
     </section>
 
     <section class="checkout contenedor" id="checkout" aria-labelledby="checkout-titulo">
@@ -162,56 +104,133 @@
         <p>Completá el formulario para simular tu pedido. No se procesan pagos reales.</p>
       </header>
 
-      <form class="formulario" novalidate>
+      <div class="checkout__layout">
 
-        <div class="formulario__campo formulario__campo--mitad">
-          <label for="nombre">Nombre completo</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana Gómez" required autocomplete="name">
+        <div class="checkout__resumen" aria-labelledby="resumen-titulo">
+          <h3 id="resumen-titulo">Resumen del pedido</h3>
+
+          <p class="checkout__resumen-vacio" id="checkout-resumen-vacio">
+            Tu carrito está vacío. <a href="#catalogo">Volvé al catálogo</a> para agregar camisetas antes de pagar.
+          </p>
+
+          <ul class="checkout__resumen-lista" id="checkout-resumen-lista" aria-live="polite"></ul>
+
+          <div class="checkout__resumen-total" id="checkout-resumen-total-fila" hidden>
+            <span>Total simulado</span>
+            <span id="checkout-resumen-total">$0,00</span>
+          </div>
         </div>
 
-        <div class="formulario__campo formulario__campo--mitad">
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" placeholder="Ej: ana@correo.com" required autocomplete="email">
-        </div>
+        <form class="formulario" novalidate>
 
-        <div class="formulario__campo formulario__campo--mitad">
-          <label for="producto">Camiseta</label>
-          <select id="producto" name="producto" required>
-            <option value="" disabled selected>Seleccioná una camiseta</option>
-            <option value="1" data-precio="32900">Camiseta Albiceleste Eco-Edition</option>
-            <option value="2" data-precio="31500">Camiseta Amarilla Canarinha Reciclada</option>
-            <option value="3" data-precio="28900">Camiseta Azul Imperio Retro Sostenible</option>
-            <option value="4" data-precio="27400">Camiseta Blanca Águila Retro Sostenible</option>
-            <option value="5" data-precio="34200">Camiseta Tricolor Bleu Edición Especial</option>
-            <option value="6" data-precio="36700">Camiseta Samurái Azul Eco-Performance</option>
-          </select>
-        </div>
+          <div class="formulario__campo formulario__campo--mitad">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana Gómez" required minlength="3" autocomplete="name">
+          </div>
 
-        <div class="formulario__campo formulario__campo--mitad">
-          <label for="cantidad">Cantidad</label>
-          <input type="number" id="cantidad" name="cantidad" min="1" max="99" value="1" required>
-        </div>
+          <div class="formulario__campo formulario__campo--mitad">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Ej: ana@correo.com" required autocomplete="email">
+          </div>
 
-        <div class="formulario__campo">
-          <label for="comentario">Comentario (opcional)</label>
-          <textarea id="comentario" name="comentario" rows="3" placeholder="Talle, dedicatoria u otra aclaración..."></textarea>
-        </div>
+          <div class="formulario__campo">
+            <label for="comentario">Comentario (opcional)</label>
+            <textarea id="comentario" name="comentario" rows="3" placeholder="Talle, dedicatoria u otra aclaración..."></textarea>
+          </div>
 
-        <div class="formulario__campo formulario__campo--consentimiento">
-          <input type="checkbox" id="consentimiento" name="consentimiento" required>
-          <label for="consentimiento">
-            Leí y acepto la <a href="#privacidad">Política de Privacidad</a>. Presto mi consentimiento libre,
-            expreso e informado para el tratamiento de mis datos con fines exclusivos de simulación (Ley 25.326).
-          </label>
-        </div>
+          <div class="formulario__campo formulario__campo--consentimiento">
+            <input type="checkbox" id="consentimiento" name="consentimiento" required>
+            <label for="consentimiento">
+              Leí y acepto la <a href="#privacidad">Política de Privacidad</a> y los
+              <a href="#terminos">Términos y Condiciones</a>. Presto mi consentimiento libre, expreso e informado
+              para el tratamiento de mis datos con fines exclusivos de simulación (Ley 25.326).
+            </label>
+          </div>
 
-        <div class="formulario__acciones">
-          <button type="submit" class="boton boton--primario">Simular compra</button>
-          <button type="reset" class="boton boton--secundario">Limpiar</button>
-        </div>
+          <div class="formulario__acciones">
+            <button type="submit" class="boton boton--primario" id="checkout-submit">Simular compra</button>
+            <button type="button" class="boton boton--secundario" id="checkout-mp">Pagar con Mercado Pago (modo prueba)</button>
+            <button type="reset" class="boton boton--secundario">Limpiar</button>
+          </div>
 
-        <p class="formulario__mensaje" id="formulario-mensaje" role="status" aria-live="polite" hidden></p>
-      </form>
+          <p class="formulario__mensaje" id="formulario-mensaje" role="status" aria-live="polite" hidden></p>
+          <p class="formulario__nota">
+            El botón de Mercado Pago usa credenciales de <strong>prueba (sandbox)</strong>: redirige a un checkout
+            real pero no cobra dinero real, en línea con que este sitio es una simulación académica.
+          </p>
+        </form>
+
+      </div>
+    </section>
+
+    <section class="terminos contenedor" id="terminos" aria-labelledby="terminos-titulo">
+      <header class="seccion__encabezado">
+        <h2 id="terminos-titulo">Términos y Condiciones</h2>
+        <p>Condiciones de uso del sitio, de la simulación de compra y derechos del consumidor (Ley 24.240).</p>
+      </header>
+
+      <div class="terminos__cuerpo">
+
+        <article class="terminos__clausula">
+          <h3>1. Objeto</h3>
+          <p>
+            Casaca Club es un proyecto académico del IES René Favaloro. El sitio simula la venta de camisetas
+            deportivas de fantasía con fines didácticos: no se procesan pagos reales ni se despachan productos.
+          </p>
+        </article>
+
+        <article class="terminos__clausula">
+          <h3>2. Aceptación</h3>
+          <p>
+            Al usar el catálogo, el carrito o el formulario de checkout, el usuario acepta estos Términos y
+            Condiciones y la <a href="#privacidad">Política de Privacidad</a>.
+          </p>
+        </article>
+
+        <article class="terminos__clausula">
+          <h3>3. Precios y disponibilidad</h3>
+          <p>
+            Los precios que se muestran son simulados, están expresados en pesos argentinos (ARS) y pueden
+            cambiar sin aviso previo. El catálogo (<code>productos.json</code>) no refleja stock real.
+          </p>
+        </article>
+
+        <article class="terminos__clausula">
+          <h3>4. Proceso de compra simulada</h3>
+          <p>
+            El carrito permite agregar, modificar la cantidad y eliminar productos antes de confirmar. Al
+            "Simular compra" se muestra un resumen en pantalla; no se genera ningún cobro ni envío real.
+          </p>
+        </article>
+
+        <article class="terminos__clausula">
+          <h3>5. Propiedad intelectual</h3>
+          <p>
+            El código fuente se distribuye bajo licencia <a href="LICENSE" rel="license">GNU GPL v3.0</a>; las
+            imágenes y descripciones generadas con IA, bajo
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">CC BY-NC-SA 4.0</a>.
+          </p>
+        </article>
+
+        <article class="terminos__clausula terminos__clausula--ancha terminos__clausula--arrepentimiento" id="arrepentimiento">
+          <h3>6. Derecho de Arrepentimiento (Ley 24.240, art. 34) y garantía</h3>
+          <p>
+            En las compras a distancia, el consumidor tiene derecho a revocar la aceptación durante el plazo de
+            <strong>10 días corridos</strong> contados desde la entrega del producto, sin costo ni responsabilidad
+            alguna. Este sitio es una simulación académica y no despacha productos reales, pero el botón a
+            continuación reproduce el mecanismo exigido por la Resolución 424/2020 de la Secretaría de Comercio
+            para que cualquier compra iniciada en el sitio pueda "arrepentirse" con la misma facilidad con la que
+            se compró.
+          </p>
+          <p>
+            Los productos simulados cuentan además con garantía legal por defectos de fabricación (art. 11,
+            Ley 24.240), a ejercer dentro de los 6 meses de la entrega, escribiendo al correo de contacto.
+          </p>
+          <button type="button" class="boton boton--primario" id="boton-arrepentimiento">Botón de Arrepentimiento</button>
+          <p class="terminos__mensaje" id="arrepentimiento-mensaje" role="status" aria-live="polite" hidden></p>
+        </article>
+
+      </div>
     </section>
 
     <section class="privacidad contenedor" id="privacidad" aria-labelledby="privacidad-titulo">
@@ -234,9 +253,9 @@
         <article class="privacidad__clausula">
           <h3>2. Datos recolectados</h3>
           <p>
-            En el formulario de simulación de compra se solicitan únicamente: nombre completo, correo electrónico,
-            camiseta elegida, cantidad y un comentario opcional. No se solicitan datos sensibles (art. 2 de la
-            Ley 25.326) ni datos de medios de pago.
+            En el formulario de simulación de compra se solicitan únicamente: nombre completo, correo electrónico
+            y un comentario opcional; el detalle del pedido (camisetas y cantidades) surge del carrito armado por
+            el propio usuario. No se solicitan datos sensibles (art. 2 de la Ley 25.326) ni datos de medios de pago.
           </p>
         </article>
 
@@ -302,6 +321,8 @@
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#catalogo">Catálogo</a></li>
           <li><a href="#checkout">Checkout</a></li>
+          <li><a href="#terminos">Términos y Condiciones</a></li>
+          <li><a href="#arrepentimiento">Botón de Arrepentimiento</a></li>
           <li><a href="#privacidad">Política de Privacidad</a></li>
         </ul>
       </nav>
@@ -324,7 +345,7 @@
     </div>
 
     <div class="footer__creditos contenedor">
-      <p>&copy; 2026 Casaca Club. Proyecto académico sin fines comerciales - Sprint 2. Código bajo GPL-3.0 · Contenido bajo CC BY-NC-SA 4.0.</p>
+      <p>&copy; 2026 Casaca Club. Proyecto académico sin fines comerciales - Sprint 3/4. Código bajo GPL-3.0 · Contenido bajo CC BY-NC-SA 4.0.</p>
     </div>
   </footer>
 

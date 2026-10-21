@@ -1,0 +1,14 @@
+{
+  "name": "casaca-club-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend minimo que crea preferencias de pago de Mercado Pago (Checkout Pro) a partir del carrito de Casaca Club.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mercadopago": "^3.6.1"
+  }
+}

@@ -1,0 +1,27 @@
+# Proxy opcional con HTTPS automático (Caddy + Let's Encrypt) para cuando
+# el VPS TODAVÍA NO tiene un reverse proxy propio atendiendo 80/443.
+#
+# NO uses este archivo si alguna de tus otras apps ya tiene algo escuchando
+# en el puerto 80 o 443 del VPS (comprobalo primero, ver DEPLOY.md) — en ese
+# caso agregá casacaclub.shop como un virtual host más en ESE proxy y dejá
+# este archivo sin usar.
+#
+# Uso: docker compose -f docker-compose.yml -f docker-compose.proxy.yml up -d --build
+services:
+  proxy:
+    image: caddy:2-alpine
+    container_name: casaca-club-app-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - web
+
+volumes:
+  caddy_data:
+  caddy_config:

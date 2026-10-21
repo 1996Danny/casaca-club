@@ -2,6 +2,8 @@
 node_modules
 dist
 dist-ssr
+server/node_modules
+server/catalog.json
 
 # Control de versiones y editores
 .git
@@ -21,4 +23,6 @@ casaca-club-sprint2
 *.log
 Dockerfile
 docker-compose.yml
+docker-compose.proxy.yml
+Caddyfile
 .dockerignore
