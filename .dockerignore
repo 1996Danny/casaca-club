@@ -23,4 +23,6 @@ casaca-club-sprint2
 *.log
 Dockerfile
 docker-compose.yml
+docker-compose.proxy.yml
+Caddyfile
 .dockerignore
