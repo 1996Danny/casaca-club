@@ -37,15 +37,27 @@ export default function StorefrontLayout({ children }: StorefrontLayoutProps) {
               Camisetas de selecciones, originales y de calidad.
             </p>
           </div>
-          <div className="flex gap-6 text-xs">
+          <nav
+            aria-label="Enlaces del footer"
+            className="flex flex-wrap gap-x-6 gap-y-2 text-xs"
+          >
             <Link to="/" className="hover:text-foreground">
               Inicio
             </Link>
             <a href="/#catalogo" className="hover:text-foreground">
               Catálogo
             </a>
+            <Link to="/terminos" className="hover:text-foreground">
+              Términos y Condiciones
+            </Link>
+            <Link to="/terminos#arrepentimiento" className="hover:text-foreground">
+              Derecho de Arrepentimiento
+            </Link>
+            <Link to="/privacidad" className="hover:text-foreground">
+              Política de Privacidad
+            </Link>
             <span>© {new Date().getFullYear()} Casaca Club</span>
-          </div>
+          </nav>
         </div>
       </footer>
 
