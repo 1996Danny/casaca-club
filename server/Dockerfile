@@ -1,7 +1,8 @@
 # Backend minimo (Node + Express) que crea preferencias de pago de
 # Mercado Pago para el carrito de la app React. Se construye con
-# contexto en la raíz del repo para poder leer jerseys-data.tsx (fuente
-# única de precios, la misma que usa el front) y derivar catalog.json.
+# contexto en la raíz del repo para poder leer public/productos.json
+# (fuente única de precios, la misma que carga el front con fetch) y
+# derivar catalog.json.
 FROM node:20-alpine
 
 WORKDIR /app
@@ -10,7 +11,7 @@ COPY server/package.json server/package-lock.json* ./
 RUN npm install --omit=dev
 
 COPY server/index.js server/export-catalog.mjs ./
-COPY src/store/data/jerseys-data.tsx ./src/store/data/jerseys-data.tsx
+COPY public/productos.json ./productos.json
 RUN node export-catalog.mjs
 
 ENV PORT=3000

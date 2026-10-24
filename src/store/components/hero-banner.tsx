@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon, ShieldIcon } from "lucide-react";
-import { JERSEYS } from "@/store/data/jerseys-data";
+import { Jersey } from "@/store/data/jerseys-data";
 
 const MARQUEE_IDS = [
   "arg-titular-2024",
@@ -9,10 +9,14 @@ const MARQUEE_IDS = [
   "jpn-titular-2024",
 ];
 
-export default function HeroBanner() {
+interface HeroBannerProps {
+  jerseys: Jersey[];
+}
+
+export default function HeroBanner({ jerseys }: HeroBannerProps) {
   const marquee = MARQUEE_IDS.map((id) =>
-    JERSEYS.find((j) => j.id === id)
-  ).filter((j): j is (typeof JERSEYS)[number] => Boolean(j));
+    jerseys.find((j) => j.id === id)
+  ).filter((j): j is Jersey => Boolean(j));
 
   return (
     <section className="relative overflow-hidden">
