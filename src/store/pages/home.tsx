@@ -2,10 +2,12 @@ import { useState } from "react";
 import HeroBanner from "@/store/components/hero-banner";
 import JerseyGrid from "@/store/components/jersey-grid";
 import JerseyDetailModal from "@/store/components/jersey-detail-modal";
-import { JERSEYS, Jersey } from "@/store/data/jerseys-data";
+import { Jersey } from "@/store/data/jerseys-data";
+import { useJerseys } from "@/store/data/use-jerseys";
 import { useCart } from "@/store/data/cart-context";
 
 export default function HomePage() {
+  const { jerseys, loading, error } = useJerseys();
   const [edition, setEdition] = useState("all");
   const [size, setSize] = useState("all");
   const [sort, setSort] = useState("relevance");
@@ -29,13 +31,29 @@ export default function HomePage() {
     });
   };
 
+  if (loading) {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <p className="text-sm text-muted-foreground">Cargando catálogo…</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center px-4 text-center">
+        <p className="text-sm text-destructive">{error}</p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col gap-14 pb-14 sm:gap-20">
-      <HeroBanner />
+      <HeroBanner jerseys={jerseys} />
 
       <div className="px-4 sm:px-6">
         <JerseyGrid
-          jerseys={JERSEYS}
+          jerseys={jerseys}
           edition={edition}
           onEditionChange={setEdition}
           size={size}

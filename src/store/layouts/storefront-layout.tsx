@@ -36,6 +36,18 @@ export default function StorefrontLayout({ children }: StorefrontLayoutProps) {
             <p className="mt-1 text-xs">
               Camisetas de selecciones, originales y de calidad.
             </p>
+            <p className="mt-1 text-xs">
+              Imágenes y descripciones del catálogo generadas con IA, bajo licencia{" "}
+              <a
+                href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es"
+                rel="license noopener noreferrer"
+                target="_blank"
+                className="underline underline-offset-2 hover:text-foreground"
+              >
+                CC BY-NC-SA 4.0
+              </a>
+              .
+            </p>
           </div>
           <nav
             aria-label="Enlaces del footer"

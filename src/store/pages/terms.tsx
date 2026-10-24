@@ -75,6 +75,19 @@ export default function TermsPage() {
             </a>
             .
           </p>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            Las imágenes y descripciones de las camisetas del catálogo fueron generadas con
+            Inteligencia Artificial y se publican bajo licencia{" "}
+            <a
+              href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es"
+              rel="license noopener noreferrer"
+              target="_blank"
+              className="text-primary underline-offset-2 hover:underline"
+            >
+              CC BY-NC-SA 4.0
+            </a>
+            .
+          </p>
         </article>
 
         <article
